@@ -15,3 +15,10 @@ export const deleteTask = (task) => (dispatch) => {
     payload: task,
   });
 };
+
+export const doneTask = (task) => (dispatch) => {
+  dispatch({
+    type: TASKS_REDUCER_CONSTANTS.TASKS_DONE_TASK,
+    payload: task,
+  });
+};

@@ -45,7 +45,7 @@ export default function NewTask() {
 
       <div className={styles.tasksCont}>
         {tasks.map((task, index) => (
-          <Task key={index} task={task}/>
+          <Task key={index} task={task} />
         ))}
       </div>
     </div>

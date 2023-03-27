@@ -5,7 +5,10 @@ import React, { useState } from "react";
 import { useDispatch } from "react-redux";
 
 // creator functions
-import { deleteTask } from "../../redux/reducers/TasksReducer/actions";
+import {
+  deleteTask,
+  doneTask,
+} from "../../redux/reducers/TasksReducer/actions";
 
 import styles from "./styles.module.css";
 import { MdDeleteOutline } from "react-icons/md";
@@ -23,8 +26,10 @@ export default function Task({ task, index }) {
     dispatch(deleteTask(task));
   }
 
-  function handleDoneTask(index) {
+  function handleDoneTask(task, index) {
     setDoneDivs((prev) => [...prev, index]);
+
+    dispatch(doneTask(task));
   }
 
   function handleEditTask(task) {
@@ -45,57 +50,103 @@ export default function Task({ task, index }) {
   }
 
   return (
-    <div
-      className={`${styles.taskCont} ${
-        doneDivs.includes(index) ? styles.doneTask : ""
-      }`}
-    >
-      <div>
-        {isEditable ? (
-          <div>
-            <input
-              onChange={(e) => setNewTask(e.target.value)}
-              type="text"
-              defaultValue={editableTask?.taskDetails}
-            />
-
-            <span>
-              <span onClick={handleSaveTask}>save</span>
-
-              <br />
-              <span onClick={() => setIsEditable(false)}>cancle</span>
-            </span>
-          </div>
-        ) : (
-          editableTask?.taskDetails || task?.taskDetails
-        )}
-      </div>
-
-      <div className={styles.taskControl}>
-        {/* Delete btn */}
-        <span>
-          <MdDeleteOutline
-            onClick={() => handleDeleteTask(task)}
-            className={styles.taskControlIcon}
+    // className={`${styles.taskCont} ${
+    //   doneDivs.includes(index) ? styles.doneTask : ""
+    // }`
+    (task.done === true) ? <div className={`${styles.taskCont} ${styles.doneTask}`}>
+    <div>
+      {isEditable ? (
+        <div>
+          <input
+            onChange={(e) => setNewTask(e.target.value)}
+            type="text"
+            defaultValue={editableTask?.taskDetails}
           />
-        </span>
 
-        {/* edit btn */}
-        <span>
-          <FiEdit2
-            onClick={() => handleEditTask(task)}
-            className={styles.taskControlIcon}
-          />
-        </span>
+          <span>
+            <span onClick={handleSaveTask}>save</span>
 
-        {/* done btn */}
-        <span>
-          <TiTickOutline
-            onClick={() => handleDoneTask(index)}
-            className={styles.taskControlIcon}
-          />
-        </span>
-      </div>
+            <br />
+            <span onClick={() => setIsEditable(false)}>cancle</span>
+          </span>
+        </div>
+      ) : (
+        editableTask?.taskDetails || task?.taskDetails
+      )}
     </div>
+
+    <div className={styles.taskControl}>
+      {/* Delete btn */}
+      <span>
+        <MdDeleteOutline
+          onClick={() => handleDeleteTask(task)}
+          className={styles.taskControlIcon}
+        />
+      </span>
+
+      {/* edit btn */}
+      <span>
+        <FiEdit2
+          onClick={() => handleEditTask(task)}
+          className={styles.taskControlIcon}
+        />
+      </span>
+
+      {/* done btn */}
+      <span>
+        <TiTickOutline
+          onClick={() => handleDoneTask(task, index)}
+          className={styles.taskControlIcon}
+        />
+      </span>
+    </div>
+  </div> : <div className={`${styles.taskCont}`}>
+    <div>
+      {isEditable ? (
+        <div>
+          <input
+            onChange={(e) => setNewTask(e.target.value)}
+            type="text"
+            defaultValue={editableTask?.taskDetails}
+          />
+
+          <span>
+            <span onClick={handleSaveTask}>save</span>
+
+            <br />
+            <span onClick={() => setIsEditable(false)}>cancle</span>
+          </span>
+        </div>
+      ) : (
+        editableTask?.taskDetails || task?.taskDetails
+      )}
+    </div>
+
+    <div className={styles.taskControl}>
+      {/* Delete btn */}
+      <span>
+        <MdDeleteOutline
+          onClick={() => handleDeleteTask(task)}
+          className={styles.taskControlIcon}
+        />
+      </span>
+
+      {/* edit btn */}
+      <span>
+        <FiEdit2
+          onClick={() => handleEditTask(task)}
+          className={styles.taskControlIcon}
+        />
+      </span>
+
+      {/* done btn */}
+      <span>
+        <TiTickOutline
+          onClick={() => handleDoneTask(task, index)}
+          className={styles.taskControlIcon}
+        />
+      </span>
+    </div>
+  </div>
   );
 }

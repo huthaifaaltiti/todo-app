@@ -22,6 +22,17 @@ const TasksReducer = (state = initialState, action) => {
 
       return restArr;
 
+    case TASKS_REDUCER_CONSTANTS.TASKS_DONE_TASK:
+      const restArr2 = state.find(
+        (findTask) => action.payload.id === findTask.id
+      );
+
+      const restArr3 = state.filter(
+        (findTask) => action.payload.id !== findTask.id
+      );
+
+      return [...restArr3, { ...restArr2, done: true }];
+
     default:
       return state;
   }

@@ -4,7 +4,10 @@ import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 
 // creator functions
-import { addNewTask } from "../../redux/reducers/TasksReducer/actions";
+import {
+  addNewTask,
+  deleteTask,
+} from "../../redux/reducers/TasksReducer/actions";
 
 // styles, icons
 import styles from "./styles.module.css";
@@ -22,6 +25,10 @@ export default function NewTask() {
 
   function handleAddNewTask() {
     dispatch(addNewTask(inputData));
+  }
+
+  function handleDeleteTask(task) {
+    dispatch(deleteTask(task));
   }
 
   return (
@@ -52,8 +59,12 @@ export default function NewTask() {
             <h3>{task.taskDetails}</h3>
 
             <div className={styles.taskControl}>
+              {/* Delete btn */}
               <span>
-                <MdDeleteOutline className={styles.taskControlIcon} />
+                <MdDeleteOutline
+                  onClick={() => handleDeleteTask(task, index)}
+                  className={styles.taskControlIcon}
+                />
               </span>
 
               <span>

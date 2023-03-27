@@ -8,7 +8,20 @@ const initialState = [];
 const TasksReducer = (state = initialState, action) => {
   switch (action.type) {
     case TASKS_REDUCER_CONSTANTS.TASKS_ADD_TASK:
-      return [...state, { taskDetails: action.payload, done: false }];
+      const uniqueNumber = Date.now();
+
+      return [
+        ...state,
+        { taskDetails: action.payload, done: false, id: uniqueNumber },
+      ];
+
+    case TASKS_REDUCER_CONSTANTS.TASKS_DELETE_TASK:
+      const findTask = state.filter(
+        (findTask) => action.payload.id !== findTask.id
+      );
+
+      return findTask;
+
     default:
       return state;
   }

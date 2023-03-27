@@ -8,3 +8,10 @@ export const addNewTask = (inputData) => (dispatch) => {
     payload: inputData,
   });
 };
+
+export const deleteTask = (task) => (dispatch) => {
+  dispatch({
+    type: TASKS_REDUCER_CONSTANTS.TASKS_DELETE_TASK,
+    payload: task,
+  });
+};

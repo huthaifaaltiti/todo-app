@@ -1,0 +1,60 @@
+/* Sector: main NavBar classes */
+
+.mainNavBar {
+  width: 100%;
+  height: auto;
+
+  padding: 1rem;
+
+  /* background-color: aquamarine; */
+}
+
+.navBarLogo {
+  width: 100%;
+
+  text-align: center;
+}
+
+.navBarLogo h2 {
+  font-size: 3rem;
+  font-weight: bold;
+}
+
+.navBarControl {
+  width: 100%;
+
+  margin-top: 2rem;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 3rem;
+}
+
+.navBarLinks {
+  text-transform: uppercase;
+  font-size: 1.6rem;
+  font-weight: normal;
+  letter-spacing: 0.5px;
+}
+
+.navBarControl span {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+.addNewTask {
+  background-color: var(--color-prim-l1);
+  border-radius: 0.5rem;
+
+  padding: 0.5rem 1.5rem;
+}
+
+.navBarAddTaskIcon {
+  width: 2rem;
+  height: 2rem;
+
+  color: var(--color-wht);
+}

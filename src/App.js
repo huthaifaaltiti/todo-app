@@ -12,6 +12,7 @@ import "./App.css";
 // pages
 const Home = lazy(() => import("./pages/Home/index.js"));
 const Tasks = lazy(() => import("./pages/Tasks/index.js"));
+const NewTask = lazy(() => import("./pages/NewTask/index.js"));
 const NotFound = lazy(() => import("./pages/NotFound/index"));
 
 function App() {
@@ -22,6 +23,7 @@ function App() {
         <Routes>
           <Route index element={<Home />} />
           <Route path="/tasks" element={<Tasks />} />
+          <Route path="/new-task" element={<NewTask />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </Suspense>

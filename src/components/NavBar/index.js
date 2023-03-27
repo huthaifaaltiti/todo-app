@@ -11,7 +11,12 @@ export default function NavBar() {
   return (
     <div className={styles.mainNavBar}>
       <div className={styles.navBarLogo}>
-        <h2>Your ToDo App</h2>
+        <h2>
+          {/* decoration spans */}
+          <span></span>
+          <span></span>
+          Your ToDo App
+        </h2>
       </div>
 
       <div className={styles.navBarControl}>

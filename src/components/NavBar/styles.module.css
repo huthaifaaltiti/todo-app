@@ -4,20 +4,52 @@
   width: 100%;
   height: auto;
 
-  padding: 1rem;
+  padding: 1rem 0;
 
-  background-color: var(--color-grey-l1);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 
 .navBarLogo {
   width: 100%;
-
-  text-align: center;
 }
 
 .navBarLogo h2 {
   font-size: 3rem;
   font-weight: bold;
+
+  color: var(--color-prim);
+
+  position: relative;
+}
+
+.navBarLogo h2 span:first-child {
+  width: 3rem;
+  height: 3rem;
+
+  border-radius: 50%;
+
+  background-color: var(--color-fif);
+
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+}
+
+.navBarLogo h2 span:last-child {
+  width: 3rem;
+  height: 3rem;
+
+  border-radius: 50%;
+
+  background-color: var(--color-secn);
+
+  position: absolute;
+  top: 1.5rem;
+  left: -1rem;
+  z-index: -1;
 }
 
 .navBarControl {
@@ -36,6 +68,8 @@
   font-size: 1.6rem;
   font-weight: normal;
   letter-spacing: 0.5px;
+
+  padding-bottom: 0.7rem;
 }
 
 .navBarControl span {
@@ -57,4 +91,76 @@
   height: 2rem;
 
   color: var(--color-wht);
+}
+
+/* Sector: Media quires */
+
+/* 700px / 16px = 43.75 */
+@media (max-width: 43em) {
+  .navBarLogo h2 {
+    font-size: 2.5rem;
+  }
+
+  .navBarLogo h2 span:first-child {
+    width: 2.5rem;
+    height: 2.5rem;
+  }
+
+  .navBarLogo h2 span:last-child {
+    width: 2.5rem;
+    height: 2.5rem;
+  }
+
+  .navBarLinks {
+    font-size: 1.4rem;
+  }
+
+  .addNewTask {
+    border-radius: 0.5rem;
+
+    padding: 0.4rem 1.2rem;
+  }
+}
+
+/* 550px / 16px = 34.375 */
+@media (max-width: 34em) {
+  .navBarLogo h2 {
+    font-size: 2.2rem;
+  }
+
+  .navBarLogo h2 span:first-child {
+    width: 2.2rem;
+    height: 2.2rem;
+  }
+
+  .navBarLogo h2 span:last-child {
+    width: 2.3rem;
+    height: 2.3rem;
+  }
+
+  .navBarLinks {
+    font-size: 1.2rem;
+  }
+
+  .addNewTask {
+    border-radius: 0.4rem;
+
+    padding: 0.3rem 1rem;
+  }
+}
+
+/* 450px / 16px = 28.125 */
+@media (max-width: 28em) {
+  .mainNavBar {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .navBarLogo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
 }

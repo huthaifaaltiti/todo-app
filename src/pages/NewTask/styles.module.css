@@ -136,3 +136,29 @@
 .taskControlIcon:hover {
   color: var(--color-secn);
 }
+
+/* after clicking ✔️ icon */
+.doneTask {
+  opacity: 0.8;
+  pointer-events: none;
+
+  position: relative;
+}
+
+.doneTask::before {
+  content: "";
+
+  opacity: 1;
+
+  width: 100%;
+  height: 1px;
+
+  background-color: var(--color-secn);
+
+  position: absolute;
+  top: 50%;
+  transform: translateY(0, 50%);
+  left: 0;
+  right: 0;
+}
+/* ** */

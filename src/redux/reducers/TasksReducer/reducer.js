@@ -16,11 +16,11 @@ const TasksReducer = (state = initialState, action) => {
       ];
 
     case TASKS_REDUCER_CONSTANTS.TASKS_DELETE_TASK:
-      const findTask = state.filter(
+      const restArr = state.filter(
         (findTask) => action.payload.id !== findTask.id
       );
 
-      return findTask;
+      return restArr;
 
     default:
       return state;

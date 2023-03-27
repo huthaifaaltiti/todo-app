@@ -20,6 +20,7 @@ export default function NewTask() {
   const [inputData, setInputData] = useState("");
   const dispatch = useDispatch();
   const tasks = useSelector((state) => state.TasksReducer);
+  const [doneDivs, setDoneDivs] = useState([]);
 
   console.log(tasks);
 
@@ -29,6 +30,10 @@ export default function NewTask() {
 
   function handleDeleteTask(task) {
     dispatch(deleteTask(task));
+  }
+
+  function handleDoneTask(index) {
+    setDoneDivs((prev) => [...prev, index]);
   }
 
   return (
@@ -55,14 +60,19 @@ export default function NewTask() {
 
       <div className={styles.tasksCont}>
         {tasks.map((task, index) => (
-          <div key={index} className={styles.taskCont}>
+          <div
+            key={index}
+            className={`${styles.taskCont} ${
+              doneDivs.includes(index) ? styles.doneTask : ""
+            }`}
+          >
             <h3>{task.taskDetails}</h3>
 
             <div className={styles.taskControl}>
               {/* Delete btn */}
               <span>
                 <MdDeleteOutline
-                  onClick={() => handleDeleteTask(task, index)}
+                  onClick={() => handleDeleteTask(task)}
                   className={styles.taskControlIcon}
                 />
               </span>
@@ -71,8 +81,12 @@ export default function NewTask() {
                 <FiEdit2 className={styles.taskControlIcon} />
               </span>
 
+              {/* done btn */}
               <span>
-                <TiTickOutline className={styles.taskControlIcon} />
+                <TiTickOutline
+                  onClick={() => handleDoneTask(index)}
+                  className={styles.taskControlIcon}
+                />
               </span>
             </div>
           </div>

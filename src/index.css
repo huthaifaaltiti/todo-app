@@ -77,12 +77,12 @@ code {
 
   /* Grey color */
   --color-gry: #f4f5f9;
-  --color-gry-d-1: #dcdde0;
-  --color-gry-d-2: #c3c4c7;
-  --color-gry-d-3: #abacae;
-  --color-gry-l-1: #f5f6fa;
-  --color-gry-l-2: #f7f8fb;
-  --color-gry-l-3: #fcfcfd;
+  --color-gry-d1: #dcdde0;
+  --color-gry-d2: #c3c4c7;
+  --color-gry-d3: #abacae;
+  --color-gry-l1: #f5f6fa;
+  --color-gry-l2: #f7f8fb;
+  --color-gry-l3: #fcfcfd;
 
   /* Text color */
   --color-txt: #3a4649;

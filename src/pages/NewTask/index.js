@@ -22,8 +22,8 @@ export default function NewTask() {
   const tasks = useSelector((state) => state.TasksReducer);
   const [doneDivs, setDoneDivs] = useState([]);
   const [isEditable, setIsEditable] = useState(false);
-
-  console.log(tasks);
+  const [editableTask, setEditableTask] = useState({});
+  const [newTask, setNewTask] = useState("");
 
   function handleAddNewTask() {
     dispatch(addNewTask(inputData));
@@ -37,8 +37,22 @@ export default function NewTask() {
     setDoneDivs((prev) => [...prev, index]);
   }
 
-  function handleEditTask() {
+  function handleEditTask(task) {
     setIsEditable(true);
+
+    setEditableTask(task);
+  }
+  console.log(editableTask);
+
+  function handleSaveTask() {
+    setEditableTask((prev) => {
+      return {
+        ...prev,
+        taskDetails: newTask,
+      };
+    });
+
+    setIsEditable(false);
   }
 
   return (
@@ -71,7 +85,26 @@ export default function NewTask() {
               doneDivs.includes(index) ? styles.doneTask : ""
             }`}
           >
-            <h3>{task.taskDetails}</h3>
+            <div>
+              {isEditable ? (
+                <div>
+                  <input
+                    onChange={(e) => setNewTask(e.target.value)}
+                    type="text"
+                    defaultValue={editableTask?.taskDetails}
+                  />
+
+                  <span>
+                    <span onClick={handleSaveTask}>save</span>
+
+                    <br />
+                    <span onClick={() => setIsEditable(false)}>cancle</span>
+                  </span>
+                </div>
+              ) : (
+                editableTask?.taskDetails || task?.taskDetails
+              )}
+            </div>
 
             <div className={styles.taskControl}>
               {/* Delete btn */}
@@ -85,7 +118,7 @@ export default function NewTask() {
               {/* edit btn */}
               <span>
                 <FiEdit2
-                  onClick={handleEditTask}
+                  onClick={() => handleEditTask(task)}
                   className={styles.taskControlIcon}
                 />
               </span>

@@ -5,15 +5,13 @@ import React from "react";
 import styles from "./styles.module.css";
 
 export default function Home() {
-  return (
-    <div className={styles.homePage}>
-      <h2>Enter a new task:</h2>
+  return <div className={styles.homePage}>
 
-      <div>
-        <input type="text" />
 
-        <button>Add Task</button>
-      </div>
+    <h1>Hi Huthaifa!</h1>
+
+    <div>
+      <p>You have added 4 tasks to your tasks list,</p>
     </div>
-  );
+  </div>;
 }

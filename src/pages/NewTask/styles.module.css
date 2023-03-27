@@ -2,14 +2,22 @@
 
 .newTaskPage {
   margin-top: 2rem;
-  padding: 1rem;
+  padding: 1rem 0;
 
   /* background-color: var(--color-grey-l2); */
 }
 
+.newTaskPage h2 {
+  color: var(--color-text);
+
+  font-size: 2rem;
+
+  margin-top: 3rem;
+}
+
 .inputCont {
   width: 100%;
-  height: 4rem;
+  height: 5rem;
 
   margin-top: 3rem;
 
@@ -25,8 +33,6 @@
   border-bottom: 1px solid var(--color-prim);
 
   font-size: 1.4rem;
-
-  padding: 0 1rem;
 
   color: var(--color-txt-l3);
 }
@@ -94,97 +100,9 @@
 
 .tasksCont {
   width: 100%;
-  margin-top: 1rem;
+  margin-top: 3rem;
 
   display: flex;
   flex-direction: column;
   gap: 1rem;
 }
-
-.taskCont {
-  width: 100%;
-  height: auto;
-
-  padding: 1rem 2rem;
-
-  background-color: var(--color-grey-l1);
-
-  border-radius: 0.5rem;
-
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-
-.taskControl {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 1rem;
-
-  padding-left: 1.5rem;
-
-  border-left: 1px solid var(--color-prim);
-}
-
-.taskControlIcon {
-  width: 2rem;
-  height: 2rem;
-
-  color: var(--color-prim);
-
-  cursor: pointer;
-
-  transition: all 0.1s linear;
-}
-
-.taskControlIcon:hover {
-  color: var(--color-secn);
-}
-
-/* after clicking ✔️ icon */
-.doneTask {
-  opacity: 0.8;
-  pointer-events: none;
-
-  position: relative;
-}
-
-.doneTask::before {
-  content: "";
-
-  opacity: 1;
-
-  width: 100%;
-  height: 1px;
-
-  background-color: var(--color-secn);
-
-  position: absolute;
-  top: 50%;
-  transform: translateY(0, 50%);
-  left: 0;
-  right: 0;
-}
-
-.doneTask:after {
-  content: "Done ✔️";
-
-  font-size: 1.2rem;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-
-  padding: 0.2rem 0.4rem;
-
-  border-radius: 0.3rem;
-
-  background-color: var(--color-tert);
-  color: var(--color-wht);
-
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-}
-/* ** */
-

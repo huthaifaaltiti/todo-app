@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 // react-redux
 import { useSelector } from "react-redux";
 
-// styles
+// styles, icons
 import styles from "./styles.module.css";
 import { TiThSmall } from "react-icons/ti";
 import { GiProgression } from "react-icons/gi";
@@ -14,13 +14,11 @@ import { AiOutlineFileDone } from "react-icons/ai";
 export default function Home() {
   const tasks = useSelector((state) => state.TasksReducer);
 
-  // getting the efficiency of finished tasks
+  // getting the efficiency of the finished tasks
   const totalNum = tasks.reduce(
     (total, current) => total + current.doneQuant,
     0
   );
-
-  console.log({ tasks });
 
   return (
     <div className={styles.homePage}>
@@ -78,7 +76,11 @@ export default function Home() {
               <p>{totalNum || 0} Tasks</p>
             </div>
             <div className={styles.dashboardText}>
-              <p>Good progress!</p>
+              <p>
+                {tasks?.length === totalNum || tasks?.length === 0
+                  ? "No finished tasks yet."
+                  : "Finish the rest!"}
+              </p>
             </div>
           </div>
         </div>

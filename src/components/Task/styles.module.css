@@ -107,13 +107,15 @@
 
   padding: 1rem 2rem;
 
-  background-color: var(--color-grey-l1);
+  background-color: var(--color-four);
 
   border-radius: 0.5rem;
 
   display: flex;
   align-items: center;
   justify-content: space-between;
+
+  position: relative;
 }
 
 .taskControl {
@@ -146,6 +148,8 @@
 .doneTask {
   opacity: 0.8;
   pointer-events: none;
+
+  cursor: not-allowed;
 
   position: relative;
 }
@@ -187,3 +191,59 @@
   transform: translate(-50%, -50%);
 }
 /* ** */
+
+.editableTaskCont {
+  width: 100%;
+
+  background-color: var(--color-four);
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
+.editableInputTaskCont {
+  width: 100%;
+  height: 100%;
+}
+
+.editableInputTask {
+  width: 100%;
+  height: 100%;
+
+  border: none;
+  outline: none;
+  border-radius: 0.5rem;
+
+  padding: 0 1rem;
+
+  background-color: var(--color-four-d1);
+}
+
+.editableTaskControl {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.2rem;
+}
+
+.editTaskIcon {
+  cursor: pointer;
+
+  width: 2.5rem;
+  height: 2.5rem;
+
+  border-radius: 0.2rem;
+
+  margin: 0.5rem;
+  padding: 0.5rem;
+
+  background-color: var(--color-four-d2);
+}

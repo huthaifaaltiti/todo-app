@@ -14,6 +14,8 @@ import styles from "./styles.module.css";
 import { MdDeleteOutline } from "react-icons/md";
 import { FiEdit2 } from "react-icons/fi";
 import { TiTickOutline } from "react-icons/ti";
+import { MdOutlineDone } from "react-icons/md";
+import { GrClose } from "react-icons/gr";
 
 export default function Task({ task, index }) {
   const dispatch = useDispatch();
@@ -100,20 +102,27 @@ export default function Task({ task, index }) {
     </div>
   ) : (
     <div className={`${styles.taskCont}`}>
-      <div>
+      <div >
         {isEditable ? (
-          <div>
-            <input
-              onChange={(e) => setNewTask(e.target.value)}
-              type="text"
-              defaultValue={editableTask?.taskDetails}
-            />
+          <div className={styles.editableTaskCont}>
+            <div className={styles.editableInputTaskCont}>
+              <input
+                className={styles.editableInputTask}
+                onChange={(e) => setNewTask(e.target.value)}
+                type="text"
+                defaultValue={editableTask?.taskDetails}
+              />
+            </div>
 
-            <span>
-              <span onClick={handleSaveTask}>save</span>
+            <span className={styles.editableTaskControl}>
+              <span onClick={handleSaveTask}>
+                <MdOutlineDone className={styles.editTaskIcon} />
+              </span>
 
               <br />
-              <span onClick={() => setIsEditable(false)}>cancle</span>
+              <span onClick={() => setIsEditable(false)}>
+                <GrClose className={styles.editTaskIcon} />
+              </span>
             </span>
           </div>
         ) : (

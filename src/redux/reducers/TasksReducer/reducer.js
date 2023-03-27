@@ -12,7 +12,7 @@ const TasksReducer = (state = initialState, action) => {
 
       return [
         ...state,
-        { taskDetails: action.payload, done: false, id: uniqueNumber },
+        { taskDetails: action.payload, done: false, id: uniqueNumber, doneQuant: 0 },
       ];
 
     case TASKS_REDUCER_CONSTANTS.TASKS_DELETE_TASK:
@@ -31,7 +31,7 @@ const TasksReducer = (state = initialState, action) => {
         (findTask) => action.payload.id !== findTask.id
       );
 
-      return [...restArr3, { ...restArr2, done: true }];
+      return [...restArr3, { ...restArr2, done: true, doneQuant: 1 }];
 
     default:
       return state;

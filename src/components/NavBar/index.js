@@ -1,7 +1,7 @@
 // react
 import React from "react";
 // react-router-dom
-import { NavLink } from "react-router-dom";
+import { NavLink, Link } from "react-router-dom";
 
 // styles, icons
 import styles from "./styles.module.css";
@@ -28,11 +28,11 @@ export default function NavBar() {
           <span>Tasks</span>
         </NavLink>
 
-        <NavLink to="/new-task">
+        <Link to="/new-task">
           <span className={styles.addNewTask}>
             <MdPlaylistAdd className={styles.navBarAddTaskIcon} />
           </span>
-        </NavLink>
+        </Link>
       </div>
     </div>
   );

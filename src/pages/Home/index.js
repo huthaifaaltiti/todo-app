@@ -1,37 +1,17 @@
 // react
-import React, { useState } from "react";
-// react-redux
-import { useDispatch, useSelector } from "react-redux";
-// creator functions
-import { addNewTask } from "../../redux/reducers/TasksReducer/actions";
+import React from "react";
 
 // styles
 import styles from "./styles.module.css";
 
 export default function Home() {
-  const [inputData, setInputData] = useState("");
-  const dispatch = useDispatch();
-  const tasks = useSelector((state) => state.TasksReducer);
+  return <div className={styles.homePage}>
 
-  function handleAddNewTask() {
-    dispatch(addNewTask(inputData));
-  }
 
-  return (
-    <div className={styles.homePage}>
-      <h2>Enter a new task:</h2>
+    <h1>Hi Huthaifa!</h1>
 
-      <div>
-        <input type="text" onChange={(e) => setInputData(e.target.value)} />
-
-        <button onClick={handleAddNewTask}>Add Task</button>
-      </div>
-
-      <div>
-        {tasks.map((task) => (
-          <h3>{task.task}</h3>
-        ))}
-      </div>
+    <div>
+      <p>You have added 4 tasks to your tasks list,</p>
     </div>
-  );
+  </div>;
 }

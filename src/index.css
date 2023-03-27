@@ -1,13 +1,109 @@
-body {
+@import url("https://fonts.googleapis.com/css2?family=Alata&display=swap");
+
+* {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  padding: 0;
+
+  box-sizing: border-box;
+}
+
+html {
+  /* 10px / 16px = 0.625 = 62.5% */
+  /* percentage of user's browser font-size settings */
+  font-size: 62.5%;
+}
+
+body {
+  font-family: "Alata", sans-serif;
+  font-size: 1.4rem;
+  font-weight: 400;
+
+  background-color: var(--color-wht);
+  color: var(--color-txt);
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
+}
+
+:root {
+  /* Colors: */
+
+  /* Primary color */
+  --color-prim: #03314b;
+  --color-prim-d1: #032c44;
+  --color-prim-d2: #02273c;
+  --color-prim-d3: #022235;
+  --color-prim-l1: #1c465d;
+  --color-prim-l2: #355a6f;
+  --color-prim-l3: #4f6f81;
+
+  /* Secondary color */
+  --color-secn: #2ce080;
+  --color-secn-d1: #28ca73;
+  --color-secn-d2: #23b366;
+  --color-secn-d3: #1f9d5a;
+  --color-secn-l1: #41e38d;
+  --color-secn-l2: #56e699;
+  --color-secn-l3: #6be9a6;
+
+  /* Tertiary color */
+  --color-tert: #0365f2;
+  --color-tert-d1: #035bda;
+  --color-tert-d2: #0251c2;
+  --color-tert-d3: #0247a9;
+  --color-tert-l1: #1c74f3;
+  --color-tert-l2: #3584f5;
+  --color-tert-l3: #4f93f6;
+
+  /* Fourth color */
+  --color-four: #fff3d7;
+  --color-four-d1: #e6dbc2;
+  --color-four-d2: #ccc2ac;
+  --color-four-d3: #b3aa97;
+  --color-four-l1: #fff4db;
+  --color-four-l2: #fff5df;
+  --color-four-l3: #fff7e3;
+
+  /* Fifth color */
+  --color-fif: #ff91a0;
+  --color-fif-d1: #e68390;
+  --color-fif-d2: #cc7480;
+  --color-fif-d3: #b36670;
+  --color-fif-l1: #ff9caa;
+  --color-fif-l2: #ffa7b3;
+  --color-fif-l3: #ffb2bd;
+
+  /* Grey color */
+  --color-gry: #f4f5f9;
+  --color-gry-d-1: #dcdde0;
+  --color-gry-d-2: #c3c4c7;
+  --color-gry-d-3: #abacae;
+  --color-gry-l-1: #f5f6fa;
+  --color-gry-l-2: #f7f8fb;
+  --color-gry-l-3: #fcfcfd;
+
+  /* Text color */
+  --color-txt: #3a4649;
+  --color-txt-d1: #343f42;
+  --color-txt-d2: #2e383a;
+  --color-txt-d3: #293133;
+  --color-txt-l1: #4e595b;
+  --color-txt-l2: #616b6d;
+  --color-txt-l3: #757e80;
+
+  /* Black && White colors */
+  --color-blk: #2c272e;
+  --color-wht: #fff;
+
+  /* Shadows: */
+  --shadow-li1: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+  --shadow-li2: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  --shadow-dir1: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+  --shadow-dir2: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+  --shadow-int1: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  --shadow-int2: rgba(0, 0, 0, 0.25) 0px 54px 55px,
+    rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px,
+    rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
 }

@@ -4,7 +4,7 @@ import * as TASKS_REDUCER_CONSTANTS from "./constants";
 // TasksReducer state
 const initialState = [
   {
-    task: "",
+    taskDetails: "",
     done: false,
   },
 ];

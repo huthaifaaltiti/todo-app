@@ -3,6 +3,9 @@ import { lazy, Suspense } from "react";
 // react-router-dom
 import { Routes, Route } from "react-router-dom";
 
+// components
+import NavBar from "./components/NavBar";
+
 // styles
 import "./App.css";
 
@@ -15,6 +18,7 @@ function App() {
   return (
     <div className="App">
       <Suspense fallback="Loading...">
+        <NavBar />
         <Routes>
           <Route index element={<Home />} />
           <Route path="/tasks" element={<Tasks />} />

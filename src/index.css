@@ -76,13 +76,13 @@ code {
   --color-fif-l3: #ffb2bd;
 
   /* Grey color */
-  --color-gry: #f4f5f9;
-  --color-gry-d1: #dcdde0;
-  --color-gry-d2: #c3c4c7;
-  --color-gry-d3: #abacae;
-  --color-gry-l1: #f5f6fa;
-  --color-gry-l2: #f7f8fb;
-  --color-gry-l3: #fcfcfd;
+  --color-grey: #f4f5f9;
+  --color-grey-d1: #dcdde0;
+  --color-grey-d2: #c3c4c7;
+  --color-grey-d3: #abacae;
+  --color-grey-l1: #f5f6fa;
+  --color-grey-l2: #f7f8fb;
+  --color-grey-l3: #fcfcfd;
 
   /* Text color */
   --color-txt: #3a4649;

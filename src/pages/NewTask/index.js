@@ -21,6 +21,7 @@ export default function NewTask() {
   const dispatch = useDispatch();
   const tasks = useSelector((state) => state.TasksReducer);
   const [doneDivs, setDoneDivs] = useState([]);
+  const [isEditable, setIsEditable] = useState(false);
 
   console.log(tasks);
 
@@ -36,8 +37,12 @@ export default function NewTask() {
     setDoneDivs((prev) => [...prev, index]);
   }
 
+  function handleEditTask() {
+    setIsEditable(true);
+  }
+
   return (
-    <div>
+    <div className={styles.newTaskPage}>
       <h2>Enter a new task:</h2>
 
       <div className={styles.inputCont}>
@@ -77,8 +82,12 @@ export default function NewTask() {
                 />
               </span>
 
+              {/* edit btn */}
               <span>
-                <FiEdit2 className={styles.taskControlIcon} />
+                <FiEdit2
+                  onClick={handleEditTask}
+                  className={styles.taskControlIcon}
+                />
               </span>
 
               {/* done btn */}

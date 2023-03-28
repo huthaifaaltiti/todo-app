@@ -44,3 +44,13 @@
   left: 45%;
   z-index: -1;
 }
+
+.noTasksMessage {
+  font-size: 1.6rem;
+
+  margin-top: 3rem;
+}
+
+.noTasksMessage span {
+  text-decoration: underline;
+}

@@ -5,6 +5,12 @@ import { Link } from "react-router-dom";
 // react-redux
 import { useSelector } from "react-redux";
 
+// react-helmet
+import { Helmet } from "react-helmet";
+
+// component
+import Footer from "../../components/Footer/index";
+
 // styles, icons
 import styles from "./styles.module.css";
 import { TiThSmall } from "react-icons/ti";
@@ -22,6 +28,12 @@ export default function Home() {
 
   return (
     <div className={styles.homePage}>
+      <Helmet>
+        <meta charSet="utf-8" />
+        <title>Dashboard</title>
+        <link rel="canonical" href="http://mysite.com/example" />
+      </Helmet>
+
       <header>
         <h2 className={styles.userName}>
           Hi Huthaifa! There is your last ToDo stats
@@ -85,6 +97,9 @@ export default function Home() {
           </div>
         </div>
       </div>
+
+      {/* Footer */}
+      <Footer />
     </div>
   );
 }

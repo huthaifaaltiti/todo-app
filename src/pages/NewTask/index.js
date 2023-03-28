@@ -2,6 +2,8 @@
 import React, { useState } from "react";
 // react-redux
 import { useDispatch, useSelector } from "react-redux";
+// react-helmet
+import { Helmet } from "react-helmet";
 
 // component
 import Task from "../../components/Task";
@@ -26,6 +28,13 @@ export default function NewTask() {
 
   return (
     <div className={styles.newTaskPage}>
+     <Helmet>
+        <meta charSet="utf-8" />
+        <title>Add New Task</title>
+        <link rel="canonical" href="http://mysite.com/example" />
+      </Helmet>
+
+      
       <h2>Enter a new task:</h2>
 
       <div className={styles.inputCont}>
@@ -48,7 +57,7 @@ export default function NewTask() {
 
       <div className={styles.tasksCont}>
         {tasks.map((task, index) => (
-          <Task key={index} task={task}  timestamp={timestamp}/>
+          <Task key={index} task={task} timestamp={timestamp} />
         ))}
       </div>
     </div>

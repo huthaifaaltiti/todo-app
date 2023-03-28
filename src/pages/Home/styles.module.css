@@ -24,6 +24,8 @@
   align-items: center;
   justify-content: center;
   gap: 2rem;
+
+  margin-bottom: 3rem;
 }
 
 .dashboardMainBox {
@@ -95,15 +97,14 @@
 
 /* 555px / 16px = 34.6875 */
 @media (max-width: 34em) {
-  .homePage header h2{
+  .homePage header h2 {
     font-size: 2rem;
   }
 }
 
 /* 415px / 16px = 25.9375 */
 @media (max-width: 25em) {
-  .homePage header h2{
+  .homePage header h2 {
     font-size: 1.8rem;
   }
 }
-

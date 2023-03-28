@@ -27,7 +27,7 @@ function App() {
           <Route path="/new-task" element={<NewTask />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
-      </Suspense>
+    </Suspense>
     </div>
   );
 }

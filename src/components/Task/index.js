@@ -1,6 +1,5 @@
 // react
 import React, { useState } from "react";
-
 // react-redux
 import { useDispatch } from "react-redux";
 
@@ -10,6 +9,7 @@ import {
   doneTask,
 } from "../../redux/reducers/TasksReducer/actions";
 
+// styles, icons
 import styles from "./styles.module.css";
 import { MdDeleteOutline } from "react-icons/md";
 import { FiEdit2 } from "react-icons/fi";

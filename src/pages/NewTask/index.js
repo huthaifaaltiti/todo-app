@@ -18,6 +18,8 @@ export default function NewTask() {
   const dispatch = useDispatch();
   const tasks = useSelector((state) => state.TasksReducer);
 
+  const timestamp = new Date().toLocaleString(); // get current date and time
+
   function handleAddNewTask() {
     dispatch(addNewTask(inputData));
   }
@@ -46,7 +48,7 @@ export default function NewTask() {
 
       <div className={styles.tasksCont}>
         {tasks.map((task, index) => (
-          <Task key={index} task={task} />
+          <Task key={index} task={task}  timestamp={timestamp}/>
         ))}
       </div>
     </div>

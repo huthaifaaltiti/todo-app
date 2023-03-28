@@ -17,7 +17,7 @@ import { TiTickOutline } from "react-icons/ti";
 import { MdOutlineDone } from "react-icons/md";
 import { GrClose } from "react-icons/gr";
 
-export default function Task({ task, index }) {
+export default function Task({ task, index, timestamp }) {
   const dispatch = useDispatch();
   const [doneDivs, setDoneDivs] = useState([]);
   const [isEditable, setIsEditable] = useState(false);
@@ -70,7 +70,7 @@ export default function Task({ task, index }) {
             </span>
           </div>
         ) : (
-          editableTask?.taskDetails || task?.taskDetails
+          <>{editableTask?.taskDetails || task?.taskDetails}</>
         )}
       </div>
 
@@ -102,7 +102,7 @@ export default function Task({ task, index }) {
     </div>
   ) : (
     <div className={`${styles.taskCont}`}>
-      <div >
+      <div>
         {isEditable ? (
           <div className={styles.editableTaskCont}>
             <div className={styles.editableInputTaskCont}>
@@ -126,7 +126,11 @@ export default function Task({ task, index }) {
             </span>
           </div>
         ) : (
-          editableTask?.taskDetails || task?.taskDetails
+          <>
+            {editableTask?.taskDetails || task?.taskDetails}
+
+            <p className={styles.createdDateMessage}>{`🕑 ${timestamp}`}</p>
+          </>
         )}
       </div>
 

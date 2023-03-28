@@ -247,3 +247,17 @@
 
   background-color: var(--color-four-d2);
 }
+
+.createdDateMessage{
+  margin-top: 1rem;
+  padding: .2rem;
+
+  font-size: .8rem;
+
+  color: var(--color-text);
+  background-color: var(--color-four-d1);
+
+  border-radius: .3rem;
+
+  
+}

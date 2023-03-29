@@ -106,3 +106,38 @@
   flex-direction: column;
   gap: 1rem;
 }
+
+.deleteAllCont {
+  width: 100%;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.deleteAllCont span {
+  padding: 1rem 2rem;
+
+  background-color: var(--color-prim);
+  color: var(--color-wht);
+
+  border-radius: 0.5rem;
+
+  cursor: pointer;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: .3rem;
+
+  transition: all .1s linear;
+}
+
+.deleteAllCont span:hover {
+  background-color: var(--color-prim-l1);
+}
+
+.deleteAllIcon{
+  width: 1.9rem;
+  height: 1.9rem;
+}

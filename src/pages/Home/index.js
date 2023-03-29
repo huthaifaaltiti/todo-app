@@ -49,7 +49,9 @@ export default function Home() {
               <TiThSmall className={styles.dashboardSubBoxIcon} />
             </div>
             <div className={styles.tasksCounterCont}>
-              <p>{tasks?.length || 0} Tasks</p>
+              <p>
+                {tasks?.length || 0} {tasks?.length === 1 ? "Task" : "Tasks"}
+              </p>
             </div>
             <div className={styles.dashboardText}>
               <p>
@@ -84,7 +86,9 @@ export default function Home() {
               <AiOutlineFileDone className={styles.dashboardSubBoxIcon} />
             </div>
             <div className={styles.tasksCounterCont}>
-              <p>{totalNum || 0} Tasks</p>
+              <p>
+                {totalNum || 0} {totalNum === 1 ? "Task" : "Tasks"}
+              </p>
             </div>
             <div className={styles.dashboardText}>
               <p>

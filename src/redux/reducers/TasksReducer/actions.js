@@ -29,3 +29,9 @@ export const editTask = (editableTask, newTask) => (dispatch) => {
     payload: { editableTask, newTask },
   });
 };
+
+export const deleteAllTasks = () => (dispatch) => {
+  dispatch({
+    type: TASKS_REDUCER_CONSTANTS.TASKS_DELETE_ALL_TASK,
+  });
+};

@@ -1,5 +1,5 @@
 // react
-import React from "react";
+import React, { useEffect, useState } from "react";
 // react router dom
 import { Link } from "react-router-dom";
 // react-redux
@@ -18,8 +18,7 @@ export default function Tasks() {
   const tasks = useSelector((state) => state.TasksReducer);
   const unDoneTasks = tasks.filter((task) => task?.done !== true);
 
-  // Set a fixed time
-  const timestamp = new Date().toLocaleString();
+  
 
   return (
     <div className={styles.tasksPage}>
@@ -34,10 +33,9 @@ export default function Tasks() {
       </header>
 
       <div className={styles.tasksCont}>
+       
         {unDoneTasks.length > 0 ? (
-          unDoneTasks?.map((task, index) => (
-            <Task key={index} task={task} timestamp={timestamp} />
-          ))
+          unDoneTasks?.map((task, index) => <Task key={index} task={task} />)
         ) : (
           <p className={styles.noTasksMessage}>
             No tasks yet.

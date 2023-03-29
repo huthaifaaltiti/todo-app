@@ -18,9 +18,24 @@ import { TiTickOutline } from "react-icons/ti";
 import { MdOutlineDone } from "react-icons/md";
 import { GrClose } from "react-icons/gr";
 
-export default function Task({ task, index, timestamp }) {
+export default function Task({ task, index }) {
   const dispatch = useDispatch();
   const tasks = useSelector((state) => state.TasksReducer);
+
+  // the Unix timestamp (in milliseconds)
+  const earlierDate = new Date(task?.taskDate).getTime();
+  const currentDate = new Date().getTime();
+
+  const diffInMilliseconds = currentDate - earlierDate;
+
+  // Convert the time difference to days
+  const daysDiff = Math.floor(diffInMilliseconds / (1000 * 60 * 60 * 24));
+
+  // Convert the time difference to hours
+  const hoursDiff = Math.floor(diffInMilliseconds / (1000 * 60 * 60));
+
+  // Convert the time difference to minutes
+  const minutesDiff = Math.floor(diffInMilliseconds / (1000 * 60));
 
   // const [doneDivs, setDoneDivs] = useState([]);
   const [isEditable, setIsEditable] = useState(false);
@@ -134,7 +149,9 @@ export default function Task({ task, index, timestamp }) {
           <>
             {editableTask?.taskDetails || task?.taskDetails}
 
-            <p className={styles.createdDateMessage}>{`🕑 ${timestamp}`}</p>
+            <p
+              className={styles.createdDateMessage}
+            >{`🕑 Since: ${daysDiff} Days, ${hoursDiff} Hours, and ${minutesDiff} Minutes`}</p>
           </>
         )}
       </div>

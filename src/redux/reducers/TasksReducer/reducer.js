@@ -10,6 +10,8 @@ const TasksReducer = (state = initialState, action) => {
     case TASKS_REDUCER_CONSTANTS.TASKS_ADD_TASK:
       const uniqueNumber = Date.now();
 
+      const timestamp = new Date().toLocaleString();
+
       return [
         ...state,
         {
@@ -17,6 +19,7 @@ const TasksReducer = (state = initialState, action) => {
           done: false,
           id: uniqueNumber,
           doneQuant: 0,
+          taskDate: timestamp,
         },
       ];
 
@@ -26,6 +29,9 @@ const TasksReducer = (state = initialState, action) => {
       );
 
       return restArr;
+
+    case TASKS_REDUCER_CONSTANTS.TASKS_DELETE_ALL_TASK:
+      return [];
 
     case TASKS_REDUCER_CONSTANTS.TASKS_DONE_TASK:
       const restArr2 = state.find(

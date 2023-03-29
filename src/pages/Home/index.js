@@ -75,7 +75,7 @@ export default function Home() {
                 {Number.isInteger(totalNum / tasks?.length)
                   ? (totalNum / tasks?.length) * 100
                   : (totalNum / tasks?.length).toFixed(2) * 100}
-                %
+                <span> %</span>
               </p>
             </div>
             <div className={styles.dashboardText}>

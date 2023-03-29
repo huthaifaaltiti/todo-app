@@ -47,7 +47,7 @@ export default function NewTask() {
         />
 
         <span className={styles.placeholder}>New Task</span>
-        {inputData.length === 0 ? (
+        {inputData?.length === 0 ? (
           ""
         ) : (
           <button className={styles.taskInputBtn} onClick={handleAddNewTask}>

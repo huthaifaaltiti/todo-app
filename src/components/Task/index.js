@@ -148,9 +148,11 @@ export default function Task({ task, index }) {
           <>
             {editableTask?.taskDetails || task?.taskDetails}
 
-            <p
-              className={styles.createdDateMessage}
-            >{`🕑 Since: ${daysDiff} Days, ${hoursDiff} Hours, and ${minutesDiff} Minutes`}</p>
+            <p className={styles.createdDateMessage}>{`🕑 Since: ${
+              daysDiff > 0 ? daysDiff + " Days, " : ""
+            } ${hoursDiff > 0 ? hoursDiff + " Hours, " : ""} ${
+              minutesDiff > 0 ? minutesDiff + " Minutes " : ""
+            }`}</p>
           </>
         )}
       </div>

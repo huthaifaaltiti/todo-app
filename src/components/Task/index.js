@@ -40,6 +40,10 @@ export default function Task({ task, index }) {
 
   // minutes
   const minutesDiff = Math.floor(diffInMilliseconds / (1000 * 60));
+  // secondes
+  const secondesDiff = Math.floor(diffInMilliseconds / 1000);
+
+  console.log(secondesDiff);
 
   function handleDeleteTask(task) {
     dispatch(deleteTask(task));
@@ -148,11 +152,19 @@ export default function Task({ task, index }) {
           <>
             {editableTask?.taskDetails || task?.taskDetails}
 
-            <p className={styles.createdDateMessage}>{`🕑 Since: ${
-              daysDiff > 0 ? daysDiff + " Days, " : ""
-            } ${hoursDiff > 0 ? hoursDiff + " Hours, " : ""} ${
-              minutesDiff > 0 ? minutesDiff + " Minutes " : ""
-            }`}</p>
+            {/* Task published time  */}
+            {secondesDiff > 60 ? (
+              <p className={styles.createdDateMessage}>
+                {`🕑 Since: ${daysDiff > 0 ? daysDiff + " Days, " : ""} ${
+                  hoursDiff > 0 ? hoursDiff + " Hours, " : ""
+                } ${minutesDiff > 0 ? minutesDiff + " Minutes " : ""} `}
+              </p>
+            ) : (
+              <p className={styles.createdDateMessage}>
+                {`🕑 Since:
+                 ${secondesDiff > 0 ? secondesDiff + " Secondes " : ""}`}
+              </p>
+            )}
           </>
         )}
       </div>

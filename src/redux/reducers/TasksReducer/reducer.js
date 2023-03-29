@@ -12,7 +12,12 @@ const TasksReducer = (state = initialState, action) => {
 
       return [
         ...state,
-        { taskDetails: action.payload, done: false, id: uniqueNumber, doneQuant: 0 },
+        {
+          taskDetails: action.payload,
+          done: false,
+          id: uniqueNumber,
+          doneQuant: 0,
+        },
       ];
 
     case TASKS_REDUCER_CONSTANTS.TASKS_DELETE_TASK:
@@ -32,6 +37,21 @@ const TasksReducer = (state = initialState, action) => {
       );
 
       return [...restArr3, { ...restArr2, done: true, doneQuant: 1 }];
+
+    case TASKS_REDUCER_CONSTANTS.TASKS_EDIT_TASK:
+      const { editableTask, newTask } = action.payload;
+
+      const restArr4 = state.find(
+        (findTask) => editableTask.id === findTask.id
+      );
+
+      // find x ==> rest - x
+
+      const restArr5 = state.filter(
+        (findTask) => editableTask.id !== findTask.id
+      ); // rest - x
+
+      return [...restArr5, { ...editableTask, taskDetails: newTask }];
 
     default:
       return state;

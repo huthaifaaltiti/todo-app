@@ -1,12 +1,13 @@
 // react
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 // react-redux
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 
 // creator functions
 import {
   deleteTask,
   doneTask,
+  editTask,
 } from "../../redux/reducers/TasksReducer/actions";
 
 // styles, icons
@@ -19,7 +20,9 @@ import { GrClose } from "react-icons/gr";
 
 export default function Task({ task, index, timestamp }) {
   const dispatch = useDispatch();
-  const [doneDivs, setDoneDivs] = useState([]);
+  const tasks = useSelector((state) => state.TasksReducer);
+
+  // const [doneDivs, setDoneDivs] = useState([]);
   const [isEditable, setIsEditable] = useState(false);
   const [editableTask, setEditableTask] = useState({});
   const [newTask, setNewTask] = useState("");
@@ -29,7 +32,7 @@ export default function Task({ task, index, timestamp }) {
   }
 
   function handleDoneTask(task, index) {
-    setDoneDivs((prev) => [...prev, index]);
+    // setDoneDivs((prev) => [...prev, index]);
 
     dispatch(doneTask(task));
   }
@@ -49,6 +52,8 @@ export default function Task({ task, index, timestamp }) {
     });
 
     setIsEditable(false);
+
+    dispatch(editTask(editableTask, newTask));
   }
 
   return task.done === true ? (

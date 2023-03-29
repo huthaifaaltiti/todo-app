@@ -4,9 +4,11 @@ import React from "react";
 import { BrowserRouter } from "react-router-dom";
 import ReactDOM from "react-dom/client";
 import reportWebVitals from "./reportWebVitals";
-// react-redux
+
+// store, react-redux, redux-persist
+import { store, persistor } from "./redux/store";
+import { PersistGate } from "redux-persist/integration/react";
 import { Provider } from "react-redux";
-import store from "./redux/store";
 
 // components
 import App from "./App";
@@ -17,11 +19,13 @@ import "./index.css";
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
-    <Provider store={store}>
-      <BrowserRouter>
-        <App />
-      </BrowserRouter>
-    </Provider>
+    <BrowserRouter>
+      <Provider store={store}>
+        <PersistGate persistor={persistor}>
+          <App />
+        </PersistGate>
+      </Provider>
+    </BrowserRouter>
   </React.StrictMode>
 );
 

@@ -18,6 +18,7 @@ export default function Tasks() {
   const tasks = useSelector((state) => state.TasksReducer);
   const unDoneTasks = tasks.filter((task) => task?.done !== true);
 
+  // Set a fixed time
   const timestamp = new Date().toLocaleString();
 
   return (

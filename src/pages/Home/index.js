@@ -19,8 +19,6 @@ import { AiOutlineFileDone } from "react-icons/ai";
 export default function Home() {
   const tasks = useSelector((state) => state.TasksReducer);
 
-
-
   // getting the efficiency of the finished tasks
   const totalNum = tasks.reduce(
     (total, current) => total + current.doneQuant,
@@ -73,7 +71,12 @@ export default function Home() {
               <GiProgression className={styles.dashboardSubBoxIcon} />
             </div>
             <div className={styles.tasksCounterCont}>
-              <p>{(totalNum / tasks?.length) * 100 || 0} %</p>
+              <p>
+                {Number.isInteger(totalNum / tasks?.length)
+                  ? (totalNum / tasks?.length) * 100
+                  : (totalNum / tasks?.length).toFixed(2) * 100}
+                %
+              </p>
             </div>
             <div className={styles.dashboardText}>
               <p>Increase your efficiency!</p>

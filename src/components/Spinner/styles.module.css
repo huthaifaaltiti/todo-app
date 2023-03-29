@@ -1,6 +1,6 @@
 /* Sector: Spinner main classes */
 
-.spinnerContainer{
+.spinnerContainer {
   width: 100vw;
   height: 100vh;
 
@@ -9,8 +9,7 @@
   justify-content: center;
 }
 
-
-.spinner{
+.spinner {
   width: 4rem;
   height: auto;
 }

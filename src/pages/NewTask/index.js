@@ -24,6 +24,7 @@ export default function NewTask() {
   const dispatch = useDispatch();
   const tasks = useSelector((state) => state.TasksReducer);
 
+
   function handleAddNewTask() {
     dispatch(addNewTask(inputData));
   }

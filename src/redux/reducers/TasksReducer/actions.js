@@ -24,6 +24,7 @@ export const doneTask = (task) => (dispatch) => {
 };
 
 export const editTask = (editableTask, newTask) => (dispatch) => {
+  
   dispatch({
     type: TASKS_REDUCER_CONSTANTS.TASKS_EDIT_TASK,
     payload: { editableTask, newTask },

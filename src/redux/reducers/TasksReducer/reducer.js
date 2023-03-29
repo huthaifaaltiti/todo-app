@@ -46,18 +46,17 @@ const TasksReducer = (state = initialState, action) => {
 
     case TASKS_REDUCER_CONSTANTS.TASKS_EDIT_TASK:
       const { editableTask, newTask } = action.payload;
+      console.log({ editableTask }, { newTask });
+      const sameObj = state.find((findTask) => editableTask.id === findTask.id);
 
-      // find x ==> rest - x
-      const restArr4 = state.find(
-        (findTask) => editableTask.id === findTask.id
+      const restArr4 = state.map((findTask) =>
+        editableTask.id !== findTask.id
+          ? findTask
+          : { ...sameObj, taskDetails: newTask }
       );
 
-      const restArr5 = state.filter(
-        (findTask) => editableTask.id !== findTask.id
-      );
-
-      return [...restArr5, { ...editableTask, taskDetails: newTask }];
-
+      // return [...restArr4, { ...sameObj, taskDetails: newTask }];
+      return restArr4;
     default:
       return state;
   }

@@ -19,6 +19,8 @@ import { AiOutlineFileDone } from "react-icons/ai";
 export default function Home() {
   const tasks = useSelector((state) => state.TasksReducer);
 
+
+
   // getting the efficiency of the finished tasks
   const totalNum = tasks.reduce(
     (total, current) => total + current.doneQuant,

@@ -1,5 +1,5 @@
 // react
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 // react-redux
 import { useDispatch, useSelector } from "react-redux";
 
@@ -20,7 +20,6 @@ import { GrClose } from "react-icons/gr";
 
 export default function Task({ task, index }) {
   const dispatch = useDispatch();
-  const tasks = useSelector((state) => state.TasksReducer);
 
   // const [doneDivs, setDoneDivs] = useState([]);
   const [isEditable, setIsEditable] = useState(false);
@@ -31,19 +30,12 @@ export default function Task({ task, index }) {
   const earlierDate = new Date(task?.taskDate).getTime();
   const currentDate = new Date().getTime();
   const diffInMilliseconds = currentDate - earlierDate;
-
-  // days
+  
   const daysDiff = Math.floor(diffInMilliseconds / (1000 * 60 * 60 * 24));
-
-  // hours
   const hoursDiff = Math.floor(diffInMilliseconds / (1000 * 60 * 60));
-
-  // minutes
   const minutesDiff = Math.floor(diffInMilliseconds / (1000 * 60));
-  // secondes
   const secondesDiff = Math.floor(diffInMilliseconds / 1000);
 
-  console.log(secondesDiff);
 
   function handleDeleteTask(task) {
     dispatch(deleteTask(task));
@@ -72,7 +64,11 @@ export default function Task({ task, index }) {
     setIsEditable(false);
 
     dispatch(editTask(editableTask, newTask));
+
+    // console.log({editableTask});
   }
+
+  // console.log({editableTask});
 
   return task.done === true ? (
     <div className={`${styles.taskCont} ${styles.doneTask}`}>

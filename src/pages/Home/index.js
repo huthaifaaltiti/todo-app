@@ -72,9 +72,10 @@ export default function Home() {
             </div>
             <div className={styles.tasksCounterCont}>
               <p>
+                {/* if 66.6666666, minimize it to 2 digits */}
                 {Number.isInteger(totalNum / tasks?.length)
-                  ? (totalNum / tasks?.length) * 100
-                  : (totalNum / tasks?.length).toFixed(2) * 100}
+                  ? (totalNum / tasks?.length) * 100 || 0
+                  : (totalNum / tasks?.length).toFixed(2) * 100 || 0}
                 <span> %</span>
               </p>
             </div>

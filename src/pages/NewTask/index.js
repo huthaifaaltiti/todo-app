@@ -47,13 +47,16 @@ export default function NewTask() {
         />
 
         <span className={styles.placeholder}>New Task</span>
-
-        <button className={styles.taskInputBtn} onClick={handleAddNewTask}>
-          <span>
-            <IoIosAdd />
-          </span>
-          Add Task
-        </button>
+        {inputData.length === 0 ? (
+          ""
+        ) : (
+          <button className={styles.taskInputBtn} onClick={handleAddNewTask}>
+            <span>
+              <IoIosAdd />
+            </span>
+            Add Task
+          </button>
+        )}
       </div>
 
       <div className={styles.tasksCont}>

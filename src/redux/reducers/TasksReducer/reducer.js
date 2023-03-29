@@ -24,39 +24,41 @@ const TasksReducer = (state = initialState, action) => {
       ];
 
     case TASKS_REDUCER_CONSTANTS.TASKS_DELETE_TASK:
-      const restArr = state.filter(
+      const restTasks = state.filter(
         (findTask) => action.payload.id !== findTask.id
       );
 
-      return restArr;
+      return restTasks;
 
     case TASKS_REDUCER_CONSTANTS.TASKS_DELETE_ALL_TASK:
       return [];
 
     case TASKS_REDUCER_CONSTANTS.TASKS_DONE_TASK:
-      const restArr2 = state.find(
+      const doneTask = state.find(
         (findTask) => action.payload.id === findTask.id
       );
 
-      const restArr3 = state.filter(
+      const undoneTasks = state.filter(
         (findTask) => action.payload.id !== findTask.id
       );
 
-      return [...restArr3, { ...restArr2, done: true, doneQuant: 1 }];
+      return [...undoneTasks, { ...doneTask, done: true, doneQuant: 1 }];
 
     case TASKS_REDUCER_CONSTANTS.TASKS_EDIT_TASK:
       const { editableTask, newTask } = action.payload;
-      console.log({ editableTask }, { newTask });
-      const sameObj = state.find((findTask) => editableTask.id === findTask.id);
 
-      const restArr4 = state.map((findTask) =>
-        editableTask.id !== findTask.id
-          ? findTask
-          : { ...sameObj, taskDetails: newTask }
+      const findEditedTask = state.find(
+        (findTask) => editableTask.id === findTask.id
       );
 
-      // return [...restArr4, { ...sameObj, taskDetails: newTask }];
-      return restArr4;
+      const newState = state.map((findTask) =>
+        editableTask.id !== findTask.id
+          ? findTask
+          : { ...findEditedTask, taskDetails: newTask }
+      );
+
+      // return [...newState, { ...findEditedTask, taskDetails: newTask }];
+      return newState;
     default:
       return state;
   }

@@ -29,7 +29,7 @@ export default function Tasks() {
       </Helmet>
 
       <header className={styles.header}>
-        <h2>Are you interested in?</h2>
+        <h2>Are you <span>interested</span> in?</h2>
       </header>
 
       <div className={styles.tasksCont}>

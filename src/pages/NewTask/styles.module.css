@@ -113,6 +113,8 @@
   display: flex;
   align-items: center;
   justify-content: center;
+
+  margin-bottom: 2rem;
 }
 
 .deleteAllCont span {
@@ -128,16 +130,16 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: .3rem;
+  gap: 0.3rem;
 
-  transition: all .1s linear;
+  transition: all 0.1s linear;
 }
 
 .deleteAllCont span:hover {
-  background-color: var(--color-prim-l1);
+  background-color: var(--color-fif-d1);
 }
 
-.deleteAllIcon{
+.deleteAllIcon {
   width: 1.9rem;
   height: 1.9rem;
 }

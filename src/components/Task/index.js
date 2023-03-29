@@ -22,25 +22,24 @@ export default function Task({ task, index }) {
   const dispatch = useDispatch();
   const tasks = useSelector((state) => state.TasksReducer);
 
-  // the Unix timestamp (in milliseconds)
-  const earlierDate = new Date(task?.taskDate).getTime();
-  const currentDate = new Date().getTime();
-
-  const diffInMilliseconds = currentDate - earlierDate;
-
-  // Convert the time difference to days
-  const daysDiff = Math.floor(diffInMilliseconds / (1000 * 60 * 60 * 24));
-
-  // Convert the time difference to hours
-  const hoursDiff = Math.floor(diffInMilliseconds / (1000 * 60 * 60));
-
-  // Convert the time difference to minutes
-  const minutesDiff = Math.floor(diffInMilliseconds / (1000 * 60));
-
   // const [doneDivs, setDoneDivs] = useState([]);
   const [isEditable, setIsEditable] = useState(false);
   const [editableTask, setEditableTask] = useState({});
   const [newTask, setNewTask] = useState("");
+
+  // the Unix timestamp (in milliseconds)
+  const earlierDate = new Date(task?.taskDate).getTime();
+  const currentDate = new Date().getTime();
+  const diffInMilliseconds = currentDate - earlierDate;
+
+  // days
+  const daysDiff = Math.floor(diffInMilliseconds / (1000 * 60 * 60 * 24));
+
+  // hours
+  const hoursDiff = Math.floor(diffInMilliseconds / (1000 * 60 * 60));
+
+  // minutes
+  const minutesDiff = Math.floor(diffInMilliseconds / (1000 * 60));
 
   function handleDeleteTask(task) {
     dispatch(deleteTask(task));

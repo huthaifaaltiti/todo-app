@@ -57,7 +57,7 @@ export default function NewTask() {
       </div>
 
       <div className={styles.tasksCont}>
-        {tasks.length > 1 ? (
+        {tasks.length > 0 ? (
           <div
             className={styles.deleteAllCont}
             onClick={() => {
@@ -66,7 +66,7 @@ export default function NewTask() {
           >
             <span>
               <MdOutlineDeleteSweep className={styles.deleteAllIcon} />
-              Delete All
+              Delete All Tasks
             </span>
           </div>
         ) : (

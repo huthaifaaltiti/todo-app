@@ -115,14 +115,35 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
+  gap: 1rem;
 
   position: relative;
 }
 
+.taskContentCont {
+  width: 70%;
+}
+
+.taskContent {
+  width: 100%;
+  height: auto;
+
+  border-radius: 0.3rem;
+
+  padding: 0.5rem;
+
+  word-wrap: break-word;
+  white-space: normal;
+
+  background-color: var(--color-four-d1);
+}
+
 .taskControl {
+  width: 30%;
+
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: space-evenly;
   gap: 1rem;
 
   padding-left: 1.5rem;
@@ -158,7 +179,7 @@
 }
 
 .doneTaskContentCont {
-  width: 82%;
+  width: 70%;
 }
 
 .doneTaskContent {
@@ -267,26 +288,6 @@
   padding: 0.5rem;
 
   background-color: var(--color-four-d2);
-}
-
-.taskContentCont {
-  display: flex;
-  flex-direction: column;
-  gap: 1.5rem;
-}
-
-.taskContent {
-  width: 50rem;
-  height: auto;
-
-  border-radius: 0.3rem;
-
-  padding: 0.5rem;
-
-  word-wrap: break-word;
-  white-space: normal;
-
-  background-color: var(--color-four-d1);
 }
 
 .createdDateMessage {

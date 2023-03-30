@@ -24,9 +24,10 @@ export default function NewTask() {
   const dispatch = useDispatch();
   const tasks = useSelector((state) => state.TasksReducer);
 
-
   function handleAddNewTask() {
     dispatch(addNewTask(inputData));
+
+    setInputData("");
   }
 
   return (
@@ -44,6 +45,7 @@ export default function NewTask() {
           className={styles.taskInput}
           type="text"
           onChange={(e) => setInputData(e.target.value)}
+          value={inputData}
           required
         />
 

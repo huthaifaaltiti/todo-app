@@ -129,9 +129,9 @@
 }
 
 .deleteAllCont span {
-  padding: 1rem 2rem;
+  padding: .8rem 1.9rem;
 
-  background-color: var(--color-prim);
+  background-color: var(--color-fif);
   color: var(--color-wht);
 
   border-radius: 0.5rem;
@@ -141,7 +141,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 0.3rem;
+  gap: 0.5rem;
 
   transition: all 0.1s linear;
 }

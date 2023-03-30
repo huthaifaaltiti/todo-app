@@ -44,6 +44,17 @@
 .taskInput:focus ~ .taskInputBtn {
   color: var(--color-prim);
   background-color: var(--color-secn);
+
+  animation: move-up 1s step-start forwards;
+}
+
+@keyframes move-up {
+  from {
+    transform: translateY(60%);
+  }
+  to {
+    transform: translateY(0);
+  }
 }
 
 .taskInput:focus ~ .taskInputBtn:hover {

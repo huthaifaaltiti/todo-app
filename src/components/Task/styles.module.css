@@ -106,6 +106,7 @@
   height: auto;
 
   padding: 1rem 2rem;
+  padding-bottom: 2.7rem;
 
   background-color: var(--color-four);
 
@@ -146,12 +147,32 @@
 
 /* after clicking ✔️ icon */
 .doneTask {
+  width: 100%;
+
   opacity: 0.8;
   pointer-events: none;
 
   cursor: not-allowed;
 
   position: relative;
+}
+
+.doneTaskContentCont {
+  width: 82%;
+}
+
+.doneTaskContent {
+  width: 100%;
+  height: auto;
+
+  border-radius: 0.3rem;
+
+  padding: 0.5rem;
+
+  word-wrap: break-word;
+  white-space: normal;
+
+  background-color: var(--color-four-d1);
 }
 
 .doneTask::before {
@@ -248,16 +269,41 @@
   background-color: var(--color-four-d2);
 }
 
-.createdDateMessage{
-  margin-top: 1rem;
-  padding: .2rem;
+.taskContentCont {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
 
-  font-size: .8rem;
+.taskContent {
+  width: 50rem;
+  height: auto;
+
+  border-radius: 0.3rem;
+
+  padding: 0.5rem;
+
+  word-wrap: break-word;
+  white-space: normal;
+
+  background-color: var(--color-four-d1);
+}
+
+.createdDateMessage {
+  width: auto;
+
+  padding: 0.2rem;
+
+  font-size: 0.8rem;
 
   color: var(--color-text);
   background-color: var(--color-four-d1);
 
-  border-radius: .3rem;
+  border-radius: 0.3rem;
+}
 
-  
+.taskTimeCont {
+  position: absolute;
+  bottom: 0.5rem;
+  left: 2rem;
 }

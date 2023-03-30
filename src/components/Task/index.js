@@ -30,12 +30,11 @@ export default function Task({ task, index }) {
   const earlierDate = new Date(task?.taskDate).getTime();
   const currentDate = new Date().getTime();
   const diffInMilliseconds = currentDate - earlierDate;
-  
+
   const daysDiff = Math.floor(diffInMilliseconds / (1000 * 60 * 60 * 24));
   const hoursDiff = Math.floor(diffInMilliseconds / (1000 * 60 * 60));
   const minutesDiff = Math.floor(diffInMilliseconds / (1000 * 60));
   const secondesDiff = Math.floor(diffInMilliseconds / 1000);
-
 
   function handleDeleteTask(task) {
     dispatch(deleteTask(task));
@@ -64,33 +63,14 @@ export default function Task({ task, index }) {
     setIsEditable(false);
 
     dispatch(editTask(editableTask, newTask));
-
-    // console.log({editableTask});
   }
 
-  // console.log({editableTask});
-
-  return task.done === true ? (
+  return task?.done === true ? (
     <div className={`${styles.taskCont} ${styles.doneTask}`}>
-      <div>
-        {isEditable ? (
-          <div>
-            <input
-              onChange={(e) => setNewTask(e.target.value)}
-              type="text"
-              defaultValue={editableTask?.taskDetails}
-            />
-
-            <span>
-              <span onClick={handleSaveTask}>save</span>
-
-              <br />
-              <span onClick={() => setIsEditable(false)}>cancle</span>
-            </span>
-          </div>
-        ) : (
-          <>{editableTask?.taskDetails || task?.taskDetails}</>
-        )}
+      <div className={styles.doneTaskContentCont}>
+        <p className={styles.doneTaskContent}>
+          {editableTask?.taskDetails || task?.taskDetails}
+        </p>
       </div>
 
       <div className={styles.taskControl}>
@@ -117,54 +97,57 @@ export default function Task({ task, index }) {
             className={styles.taskControlIcon}
           />
         </span>
+      </div>
+
+      {/* Task published time  */}
+      <div className={styles.taskTimeCont}>
+        {secondesDiff > 60 ? (
+          <p className={styles.createdDateMessage}>
+            {`🕑 Since: ${daysDiff > 0 ? daysDiff + " Days, " : ""} ${
+              hoursDiff > 0 ? hoursDiff + " Hours, " : ""
+            } ${minutesDiff > 0 ? minutesDiff + " Minutes " : ""} `}
+          </p>
+        ) : (
+          <p className={styles.createdDateMessage}>
+            {`🕑 Since:
+                 ${secondesDiff > 0 ? secondesDiff + " Secondes " : ""}`}
+          </p>
+        )}
       </div>
     </div>
   ) : (
     <div className={`${styles.taskCont}`}>
-      <div>
-        {isEditable ? (
-          <div className={styles.editableTaskCont}>
-            <div className={styles.editableInputTaskCont}>
-              <input
-                className={styles.editableInputTask}
-                onChange={(e) => setNewTask(e.target.value)}
-                type="text"
-                defaultValue={editableTask?.taskDetails}
-              />
-            </div>
-
-            <span className={styles.editableTaskControl}>
-              <span onClick={handleSaveTask}>
-                <MdOutlineDone className={styles.editTaskIcon} />
-              </span>
-
-              <br />
-              <span onClick={() => setIsEditable(false)}>
-                <GrClose className={styles.editTaskIcon} />
-              </span>
-            </span>
+      {isEditable ? (
+        <div className={styles.editableTaskCont}>
+          <div className={styles.editableInputTaskCont}>
+            <input
+              className={styles.editableInputTask}
+              onChange={(e) => setNewTask(e.target.value)}
+              type="text"
+              defaultValue={editableTask?.taskDetails}
+            />
           </div>
-        ) : (
-          <>
+
+          <span className={styles.editableTaskControl}>
+            <span onClick={handleSaveTask}>
+              <MdOutlineDone className={styles.editTaskIcon} />
+            </span>
+
+            <br />
+            <span onClick={() => setIsEditable(false)}>
+              <GrClose className={styles.editTaskIcon} />
+            </span>
+          </span>
+        </div>
+      ) : (
+        <div className={styles.taskContentCont}>
+          <p className={styles.taskContent}>
             {editableTask?.taskDetails || task?.taskDetails}
+          </p>
+        </div>
+      )}
 
-            {/* Task published time  */}
-            {secondesDiff > 60 ? (
-              <p className={styles.createdDateMessage}>
-                {`🕑 Since: ${daysDiff > 0 ? daysDiff + " Days, " : ""} ${
-                  hoursDiff > 0 ? hoursDiff + " Hours, " : ""
-                } ${minutesDiff > 0 ? minutesDiff + " Minutes " : ""} `}
-              </p>
-            ) : (
-              <p className={styles.createdDateMessage}>
-                {`🕑 Since:
-                 ${secondesDiff > 0 ? secondesDiff + " Secondes " : ""}`}
-              </p>
-            )}
-          </>
-        )}
-      </div>
-
+      {/* task control panel: delete, edit, done */}
       <div className={styles.taskControl}>
         {/* Delete btn */}
         <span>
@@ -189,6 +172,22 @@ export default function Task({ task, index }) {
             className={styles.taskControlIcon}
           />
         </span>
+      </div>
+
+      {/* Task published time  */}
+      <div className={styles.taskTimeCont}>
+        {secondesDiff > 60 ? (
+          <p className={styles.createdDateMessage}>
+            {`🕑 Since: ${daysDiff > 0 ? daysDiff + " Days, " : ""} ${
+              hoursDiff > 0 ? hoursDiff + " Hours, " : ""
+            } ${minutesDiff > 0 ? minutesDiff + " Minutes " : ""} `}
+          </p>
+        ) : (
+          <p className={styles.createdDateMessage}>
+            {`🕑 Since:
+                 ${secondesDiff > 0 ? secondesDiff + " Secondes " : ""}`}
+          </p>
+        )}
       </div>
     </div>
   );

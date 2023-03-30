@@ -19,8 +19,8 @@ import { AiOutlineFileDone } from "react-icons/ai";
 export default function Home() {
   const tasks = useSelector((state) => state.TasksReducer);
 
-  // getting the efficiency of the finished tasks
-  const totalNum = tasks.reduce(
+  // for getting the efficiency of the finished tasks
+  const totalNumOfDoneTasks = tasks.reduce(
     (total, current) => total + current.doneQuant,
     0
   );
@@ -33,19 +33,20 @@ export default function Home() {
         <link rel="canonical" href="http://mysite.com/example" />
       </Helmet>
 
-      <header>
+      <header className={styles.slideIn}>
         <h2 className={styles.userName}>
           Hi Huthaifa! There is your last ToDo stats
         </h2>
       </header>
 
       <div className={styles.dashboardCont}>
-        {/* <h3>Start growing with ToDo App now</h3> */}
-
         {/* total tasks */}
-        <div className={styles.dashboardMainBox}>
+        <div
+          className={`${styles.dashboardMainBox} ${styles.dashboardTotalTasksBox}`}
+        >
           <div className={styles.dashboardSubBox}>
             <div className={styles.dashboardSubBoxIconCont}>
+              <h3>UnFinished</h3>
               <TiThSmall className={styles.dashboardSubBoxIcon} />
             </div>
             <div className={styles.tasksCounterCont}>
@@ -65,18 +66,21 @@ export default function Home() {
         </div>
 
         {/* efficiency of finished tasks */}
-        <div className={styles.dashboardMainBox}>
+        <div
+          className={`${styles.dashboardMainBox} ${styles.dashboardTasksEffBox}`}
+        >
           <div className={styles.dashboardSubBox}>
             <div className={styles.dashboardSubBoxIconCont}>
+            <h3>Activity</h3>
               <GiProgression className={styles.dashboardSubBoxIcon} />
             </div>
             <div className={styles.tasksCounterCont}>
               <p>
                 {/* if 66.6666666, minimize it to 2 digits */}
-                {Number.isInteger(totalNum / tasks?.length)
-                  ? (totalNum / tasks?.length) * 100 || 0
-                  : (totalNum / tasks?.length).toFixed(2) * 100 || 0}
-                <span> %</span>
+                {Number.isInteger(totalNumOfDoneTasks / tasks?.length)
+                  ? (totalNumOfDoneTasks / tasks?.length) * 100 || 0
+                  : (totalNumOfDoneTasks / tasks?.length).toFixed(2) * 100 || 0}
+                <span>{totalNumOfDoneTasks > 0 ? " %" : ""}</span>
               </p>
             </div>
             <div className={styles.dashboardText}>
@@ -86,19 +90,23 @@ export default function Home() {
         </div>
 
         {/*finished tasks */}
-        <div className={styles.dashboardMainBox}>
+        <div
+          className={`${styles.dashboardMainBox} ${styles.dashboardFinishedTasksBox}`}
+        >
           <div className={styles.dashboardSubBox}>
             <div className={styles.dashboardSubBoxIconCont}>
+              <h3>Finished</h3>
               <AiOutlineFileDone className={styles.dashboardSubBoxIcon} />
             </div>
             <div className={styles.tasksCounterCont}>
               <p>
-                {totalNum || 0} {totalNum === 1 ? "Task" : "Tasks"}
+                {totalNumOfDoneTasks || 0}{" "}
+                {totalNumOfDoneTasks === 1 ? "Task" : "Tasks"}
               </p>
             </div>
             <div className={styles.dashboardText}>
               <p>
-                {tasks?.length === totalNum || tasks?.length === 0
+                {tasks?.length === totalNumOfDoneTasks || tasks?.length === 0
                   ? "No finished tasks yet."
                   : "Finish the rest!"}
               </p>

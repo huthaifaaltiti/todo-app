@@ -3,3 +3,9 @@
   margin: 0 auto;
 }
 
+.goToTopBtn {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  z-index: 10000000;
+}

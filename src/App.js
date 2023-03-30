@@ -6,6 +6,7 @@ import { Routes, Route } from "react-router-dom";
 // components
 import NavBar from "./components/NavBar";
 import Spinner from "./components/Spinner";
+import GoToTopBtn from "./components/GoToTopBtn/index";
 
 // styles
 import "./App.css";
@@ -27,7 +28,12 @@ function App() {
           <Route path="/new-task" element={<NewTask />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
-    </Suspense>
+      </Suspense>
+
+      {/* Go to top button */}
+      <span className="goToTopBtn">
+        <GoToTopBtn  />
+      </span>
     </div>
   );
 }

@@ -71,7 +71,7 @@ export default function Home() {
         >
           <div className={styles.dashboardSubBox}>
             <div className={styles.dashboardSubBoxIconCont}>
-            <h3>Activity</h3>
+              <h3>Activity</h3>
               <GiProgression className={styles.dashboardSubBoxIcon} />
             </div>
             <div className={styles.tasksCounterCont}>

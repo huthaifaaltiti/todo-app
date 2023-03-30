@@ -13,6 +13,8 @@
   font-size: 2rem;
 
   margin-top: 3rem;
+
+  animation: slideIn 0.6s ease-in-out;
 }
 
 .inputCont {
@@ -22,6 +24,8 @@
   margin-top: 3rem;
 
   position: relative;
+
+  animation: slideIn 0.4s ease-in-out;
 }
 
 .taskInput {
@@ -45,7 +49,7 @@
   color: var(--color-prim);
   background-color: var(--color-secn);
 
-  animation: move-up 1s step-start forwards;
+  animation: move-up 0.2s ease-out forwards;
 }
 
 @keyframes move-up {
@@ -55,6 +59,15 @@
   to {
     transform: translateY(0);
   }
+}
+
+.taskInput {
+  overflow: hidden;
+  text-overflow: ellipsis;
+
+  padding-right: 13rem;
+
+  caret-color: var(--color-secn);
 }
 
 .taskInput:focus ~ .taskInputBtn:hover {
@@ -129,7 +142,7 @@
 }
 
 .deleteAllCont span {
-  padding: .8rem 1.9rem;
+  padding: 0.8rem 1.9rem;
 
   background-color: var(--color-fif);
   color: var(--color-wht);
@@ -153,4 +166,21 @@
 .deleteAllIcon {
   width: 1.9rem;
   height: 1.9rem;
+}
+
+/* Sector: General app use */
+
+/* App general animation */
+
+.slideIn {
+  animation: slideIn 0.5s ease-in-out;
+}
+
+@keyframes slideIn {
+  from {
+    transform: translateY(-100%);
+  }
+  to {
+    transform: translateY(0);
+  }
 }

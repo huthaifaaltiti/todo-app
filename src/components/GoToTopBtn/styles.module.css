@@ -11,13 +11,13 @@
 }
 
 .btnCont {
-  padding: 0.5rem;
+  padding: 0.4rem 0.8rem;
 
-  border-radius: 0.2rem;
+  border-radius: 0.5rem;
 
   box-shadow: var(--shadow-dir1);
 
-  background-color: var(--color-fif);
+  background-color: var(--color-prim);
 }
 
 .btnIcon {

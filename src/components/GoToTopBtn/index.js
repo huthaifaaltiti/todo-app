@@ -3,14 +3,13 @@ import React, { useState, useEffect } from "react";
 
 // styles
 import styles from "./styles.module.css";
-import { BsBoxArrowInUp } from "react-icons/bs";
+import { BiArrowToTop } from "react-icons/bi";
 
 export default function GoToTopBtn() {
   const [isVisible, setIsVisible] = useState(false);
 
   const handleScroll = () => {
-    // Check if user has scrolled down the page
-    if (window.scrollY > 500) {
+    if (window.scrollY > 200) {
       setIsVisible(true);
     } else {
       setIsVisible(false);
@@ -25,7 +24,6 @@ export default function GoToTopBtn() {
   };
 
   useEffect(() => {
-    // Add event listener to window to detect scroll position
     window.addEventListener("scroll", handleScroll);
 
     // Remove event listener when component is unmounted
@@ -39,7 +37,7 @@ export default function GoToTopBtn() {
       {isVisible && (
         <div className={styles.btnBody}>
           <span onClick={scrollToTop} className={styles.btnCont}>
-            <BsBoxArrowInUp className={styles.btnIcon} />
+            <BiArrowToTop className={styles.btnIcon} />
           </span>
         </div>
       )}

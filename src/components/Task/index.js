@@ -36,6 +36,11 @@ export default function Task({ task, index }) {
   const minutesDiff = Math.floor(diffInMilliseconds / (1000 * 60));
   const secondesDiff = Math.floor(diffInMilliseconds / 1000);
 
+  // const daysDiff = 0;
+  // const hoursDiff = 0;
+  // const minutesDiff = 0;
+  // const secondesDiff = 2;
+
   function handleDeleteTask(task) {
     dispatch(deleteTask(task));
   }
@@ -101,16 +106,30 @@ export default function Task({ task, index }) {
 
       {/* Task published time  */}
       <div className={styles.taskTimeCont}>
-        {secondesDiff > 60 ? (
+        {secondesDiff > 59 ? (
           <p className={styles.createdDateMessage}>
-            {`🕑 Since: ${daysDiff > 0 ? daysDiff + " Days, " : ""} ${
-              hoursDiff > 0 ? hoursDiff + " Hours, " : ""
-            } ${minutesDiff > 0 ? minutesDiff + " Minutes " : ""} `}
+            {`🕑 Since: ${
+              minutesDiff > 59
+                ? hoursDiff === 1
+                  ? hoursDiff + " Hour "
+                  : hoursDiff < 24
+                  ? hoursDiff + " Hours "
+                  : daysDiff === 1
+                  ? daysDiff + " Day"
+                  : daysDiff + " Days"
+                : minutesDiff === 1
+                ? minutesDiff + " Minute "
+                : minutesDiff + " Minutes "
+            } `}
           </p>
         ) : (
           <p className={styles.createdDateMessage}>
             {`🕑 Since:
-                 ${secondesDiff > 0 ? secondesDiff + " Secondes " : ""}`}
+                 ${
+                   secondesDiff === 1
+                     ? secondesDiff + " Second "
+                     : secondesDiff + " Seconds "
+                 }`}
           </p>
         )}
       </div>
@@ -176,16 +195,30 @@ export default function Task({ task, index }) {
 
       {/* Task published time  */}
       <div className={styles.taskTimeCont}>
-        {secondesDiff > 60 ? (
+        {secondesDiff > 59 ? (
           <p className={styles.createdDateMessage}>
-            {`🕑 Since: ${daysDiff > 0 ? daysDiff + " Days, " : ""} ${
-              hoursDiff > 0 ? hoursDiff + " Hours, " : ""
-            } ${minutesDiff > 0 ? minutesDiff + " Minutes " : ""} `}
+            {`🕑 Since: ${
+              minutesDiff > 59
+                ? hoursDiff === 1
+                  ? hoursDiff + " Hour "
+                  : hoursDiff < 24
+                  ? hoursDiff + " Hours "
+                  : daysDiff === 1
+                  ? daysDiff + " Day"
+                  : daysDiff + " Days"
+                : minutesDiff === 1
+                ? minutesDiff + " Minute "
+                : minutesDiff + " Minutes "
+            } `}
           </p>
         ) : (
           <p className={styles.createdDateMessage}>
             {`🕑 Since:
-                 ${secondesDiff > 0 ? secondesDiff + " Secondes " : ""}`}
+                 ${
+                   secondesDiff === 1
+                     ? secondesDiff + " Second "
+                     : secondesDiff + " Seconds "
+                 }`}
           </p>
         )}
       </div>

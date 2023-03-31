@@ -39,7 +39,7 @@ export default function Home() {
         </h2>
       </header>
 
-      <div className={styles.dashboardCont}>
+      <div className={styles.dashboardsCont}>
         {/* total tasks */}
         <div
           className={`${styles.dashboardMainBox} ${styles.dashboardTotalTasksBox}`}
@@ -116,7 +116,7 @@ export default function Home() {
       </div>
 
       {/* Footer */}
-      <Footer />
+      <Footer className={styles.footer} />
     </div>
   );
 }

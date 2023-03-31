@@ -15,7 +15,7 @@
   margin-top: 2rem;
 }
 
-.dashboardCont {
+.dashboardsCont {
   width: 100%;
 
   margin-top: 4rem;
@@ -24,8 +24,6 @@
   align-items: center;
   justify-content: center;
   gap: 2rem;
-
-  margin-bottom: 3rem;
 }
 
 .dashboardMainBox {
@@ -138,11 +136,15 @@
   width: 100%;
 }
 
+.footer {
+  margin-top: 3rem;
+}
+
 /* Sector: Media quires */
 
 /* 1050px / 16px = 65.625 */
 @media (max-width: 65em) {
-  .dashboardCont {
+  .dashboardsCont {
     flex-wrap: wrap;
   }
 

@@ -22,7 +22,7 @@ export default function Task({ task, index }) {
   const dispatch = useDispatch();
   const tasks = useSelector((state) => state.TasksReducer);
 
-  console.log({tasks});
+  console.log({ tasks });
 
   // const [doneDivs, setDoneDivs] = useState([]);
   const [isEditable, setIsEditable] = useState(false);
@@ -143,7 +143,11 @@ export default function Task({ task, index }) {
         <div className={styles.editableTaskCont}>
           <div className={styles.editableInputTaskCont}>
             <input
-              className={styles.editableInputTask}
+              className={`${styles.editableInputTask} ${
+                /[\u0600-\u06FF]/.test(newTask || editableTask?.taskDetails)
+                  ? styles.rtl
+                  : styles.ltr
+              }`}
               onChange={(e) => setNewTask(e.target.value)}
               type="text"
               defaultValue={editableTask?.taskDetails}

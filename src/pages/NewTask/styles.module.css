@@ -41,12 +41,13 @@
   color: var(--color-txt-l3);
 }
 
-/* for arabic and english fonts */
+/* Arabic chars. */
 .rtl {
   direction: rtl;
   font-family: "Readex Pro", sans-serif;
 }
 
+/* English chars. */
 .ltr {
   direction: ltr;
   font-family: "Alata", sans-serif;

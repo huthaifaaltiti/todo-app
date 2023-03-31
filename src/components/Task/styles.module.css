@@ -138,6 +138,7 @@
   background-color: var(--color-four-d1);
 }
 
+/* For english and arabic fonts */
 .rtl {
   direction: rtl;
   font-family: "Readex Pro", sans-serif;
@@ -259,6 +260,7 @@
   left: 0;
   right: 0;
   bottom: 0;
+  z-index: 100000;
 }
 
 .editableInputTaskCont {

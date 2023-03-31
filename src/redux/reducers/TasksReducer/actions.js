@@ -2,10 +2,10 @@
 import * as TASKS_REDUCER_CONSTANTS from "./constants";
 
 // creator functions
-export const addNewTask = (inputData) => (dispatch) => {
+export const addNewTask = (inputData, isArabic) => (dispatch) => {
   dispatch({
     type: TASKS_REDUCER_CONSTANTS.TASKS_ADD_TASK,
-    payload: inputData,
+    payload: { inputData, isArabic },
   });
 };
 
@@ -24,7 +24,6 @@ export const doneTask = (task) => (dispatch) => {
 };
 
 export const editTask = (editableTask, newTask) => (dispatch) => {
-  
   dispatch({
     type: TASKS_REDUCER_CONSTANTS.TASKS_EDIT_TASK,
     payload: { editableTask, newTask },

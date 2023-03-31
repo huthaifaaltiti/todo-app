@@ -160,7 +160,11 @@ export default function Task({ task, index }) {
         </div>
       ) : (
         <div className={styles.taskContentCont}>
-          <p className={styles.taskContent}>
+          <p
+            className={`${styles.taskContent}  ${
+              task?.isArabic ? styles.rtl : styles.ltr
+            }`}
+          >
             {editableTask?.taskDetails || task?.taskDetails}
           </p>
         </div>

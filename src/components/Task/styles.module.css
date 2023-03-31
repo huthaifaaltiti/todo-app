@@ -138,6 +138,15 @@
   background-color: var(--color-four-d1);
 }
 
+.rtl {
+  direction: rtl;
+  font-family: 'Readex Pro', sans-serif;
+}
+
+.ltr {
+  direction: ltr;
+}
+
 .taskControl {
   width: 30%;
 

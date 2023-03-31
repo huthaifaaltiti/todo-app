@@ -1,4 +1,24 @@
+/* Fonts */
+
+/* Alata font for English */
 @import url("https://fonts.googleapis.com/css2?family=Alata&display=swap");
+
+/* Readex font for Arabic */
+@import url('https://fonts.googleapis.com/css2?family=Readex+Pro:wght@400;500;600;700&display=swap');
+
+/* font-face rule, Alata font */
+@font-face {
+  font-family: "Alata";
+  src: url("https://fonts.gstatic.com/s/alata/v5/PbytFmztEwbIofe6xKcRQfesZW2xOQ-xsNqO47m55DA.woff2")
+    format("woff2");
+}
+
+/* font-face rule, Cairo font */
+@font-face {
+  font-family: "Readex Pro";
+  src: url("https://fonts.gstatic.com/s/cairo/v9/SLXHc1jY5nQ8ovjWjw7zPw.ttf")
+    format("truetype");
+}
 
 * {
   margin: 0;

@@ -9,17 +9,18 @@ const TasksReducer = (state = initialState, action) => {
   switch (action.type) {
     case TASKS_REDUCER_CONSTANTS.TASKS_ADD_TASK:
       const uniqueNumber = Date.now();
-
       const timestamp = new Date().toLocaleString();
+      const { inputData, isArabic } = action.payload;
 
       return [
         ...state,
         {
-          taskDetails: action.payload,
+          taskDetails: inputData,
           done: false,
           id: uniqueNumber,
           doneQuant: 0,
           taskDate: timestamp,
+          isArabic: isArabic,
         },
       ];
 

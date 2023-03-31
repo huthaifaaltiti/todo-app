@@ -25,10 +25,14 @@ export default function NewTask() {
   const tasks = useSelector((state) => state.TasksReducer);
 
   function handleAddNewTask() {
-    dispatch(addNewTask(inputData));
+    // check the language of input characters
+    const isArabic = /[\u0600-\u06FF]/.test(inputData);
+
+    dispatch(addNewTask(inputData, isArabic));
 
     setInputData("");
   }
+
 
   return (
     <div className={styles.newTaskPage}>

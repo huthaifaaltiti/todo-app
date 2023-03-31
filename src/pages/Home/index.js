@@ -4,6 +4,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 // react-redux
 import { useSelector } from "react-redux";
+
 // react-helmet
 import { Helmet } from "react-helmet";
 
@@ -116,7 +117,9 @@ export default function Home() {
       </div>
 
       {/* Footer */}
-      <Footer className={styles.footer} />
+      <div className={styles.footerCont}>
+        <Footer />
+      </div>
     </div>
   );
 }

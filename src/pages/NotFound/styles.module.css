@@ -1,10 +1,51 @@
 /* Sector: NotFound page main classes */
 
-.notFoundPage{
+.notFoundPage {
   width: 100%;
 }
 
-.player{
+.player {
   height: 40rem;
   margin-bottom: 1rem;
+}
+
+.doAnActionCont {
+  width: 100%;
+
+  margin-top: 5rem;
+
+  display: grid;
+  place-items: center;
+}
+
+.doAnActionCont p {
+  font-size: 2rem;
+
+  padding: 0.5rem 1rem;
+
+  border-radius: 0.5rem;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+
+  background-color: var(--color-grey-d1);
+
+  /* box-shadow: var(--shadow-li1); */
+
+  cursor: pointer;
+
+  transition: all 0.15s linear;
+}
+
+.doAnActionCont p:hover {
+  background-color: var(--color-grey-d2);
+}
+
+.doAnActionIcon {
+  width: 1.5rem;
+  height: 1.5rem;
+
+  color: var(--color-tert);
 }

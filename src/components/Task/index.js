@@ -22,8 +22,6 @@ export default function Task({ task, index }) {
   const dispatch = useDispatch();
   const tasks = useSelector((state) => state.TasksReducer);
 
-  console.log({ tasks });
-
   // const [doneDivs, setDoneDivs] = useState([]);
   const [isEditable, setIsEditable] = useState(false);
   const [editableTask, setEditableTask] = useState({});
@@ -64,7 +62,7 @@ export default function Task({ task, index }) {
     setEditableTask((prev) => {
       return {
         ...prev,
-        taskDetails: newTask,
+        taskDetails: newTask || editableTask?.taskDetails,
       };
     });
 

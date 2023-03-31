@@ -1,12 +1,15 @@
 // react
 import React from "react";
+// react-router-dom
+import { Link } from "react-router-dom";
 
-// lottiefiles
+// lottiefiles GIF
 import { Player } from "@lottiefiles/react-lottie-player";
 import notfoundData from "../../assets/gifs/73061-search-not-found.json";
 
-// styles
+// styles, icon
 import styles from "./styles.module.css";
+import { RxDashboard } from "react-icons/rx";
 
 export default function NotFound() {
   const notFoundedGIFData = {
@@ -21,6 +24,17 @@ export default function NotFound() {
         loop
         src={notFoundedGIFData.animationData}
       ></Player>
+
+      <div className={styles.doAnActionCont}>
+        <Link to="/">
+          <p>
+            <span>
+              <RxDashboard className={styles.doAnActionIcon} />
+            </span>
+            <span>Dashboard</span>
+          </p>
+        </Link>
+      </div>
     </div>
   );
 }

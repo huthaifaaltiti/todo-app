@@ -140,11 +140,12 @@
 
 .rtl {
   direction: rtl;
-  font-family: 'Readex Pro', sans-serif;
+  font-family: "Readex Pro", sans-serif;
 }
 
 .ltr {
   direction: ltr;
+  font-family: "Alata", sans-serif;
 }
 
 .taskControl {

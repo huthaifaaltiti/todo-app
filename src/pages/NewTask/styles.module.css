@@ -41,6 +41,17 @@
   color: var(--color-txt-l3);
 }
 
+.rtl {
+  direction: rtl;
+  font-family: 'Readex Pro', sans-serif;
+}
+
+.ltr {
+  direction: ltr;
+  font-family: "Alata", sans-serif;
+}
+
+
 .taskInput:focus {
   border-color: var(--color-secn);
 }

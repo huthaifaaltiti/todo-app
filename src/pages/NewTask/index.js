@@ -24,15 +24,14 @@ export default function NewTask() {
   const dispatch = useDispatch();
   const tasks = useSelector((state) => state.TasksReducer);
 
-  function handleAddNewTask() {
-    // check the language of input characters
-    const isArabic = /[\u0600-\u06FF]/.test(inputData);
+  // check the language of input characters
+  const isArabic = /[\u0600-\u06FF]/.test(inputData);
 
+  function handleAddNewTask(isArabic) {
     dispatch(addNewTask(inputData, isArabic));
 
     setInputData("");
   }
-
 
   return (
     <div className={styles.newTaskPage}>
@@ -46,7 +45,7 @@ export default function NewTask() {
 
       <div className={styles.inputCont}>
         <input
-          className={styles.taskInput}
+          className={`${styles.taskInput} ${isArabic ? styles.rtl : styles.ltr}`}
           type="text"
           onChange={(e) => setInputData(e.target.value)}
           value={inputData}

@@ -1,3 +1,18 @@
+/* Sector: Index.css main classes */
+
+* {
+  margin: 0;
+  padding: 0;
+
+  box-sizing: border-box;
+}
+
+html {
+  /* 10px / 16px = 0.625 = 62.5% */
+  /* percentage of user's browser font-size settings */
+  font-size: 62.5%;
+}
+
 /* Apps' Fonts */
 
 /* English font */
@@ -18,19 +33,6 @@
   font-family: "Readex Pro";
   src: url("https://fonts.gstatic.com/s/cairo/v9/SLXHc1jY5nQ8ovjWjw7zPw.ttf")
     format("truetype");
-}
-
-* {
-  margin: 0;
-  padding: 0;
-
-  box-sizing: border-box;
-}
-
-html {
-  /* 10px / 16px = 0.625 = 62.5% */
-  /* percentage of user's browser font-size settings */
-  font-size: 62.5%;
 }
 
 body {

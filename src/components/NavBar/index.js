@@ -3,7 +3,7 @@ import React from "react";
 // react-router-dom
 import { NavLink, Link } from "react-router-dom";
 
-// styles, icons
+// styles, icon
 import styles from "./styles.module.css";
 import { MdPlaylistAdd } from "react-icons/md";
 

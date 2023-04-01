@@ -16,6 +16,12 @@ export const deleteTask = (task) => (dispatch) => {
   });
 };
 
+export const deleteAllTasks = () => (dispatch) => {
+  dispatch({
+    type: TASKS_REDUCER_CONSTANTS.TASKS_DELETE_ALL_TASKS,
+  });
+};
+
 export const doneTask = (task) => (dispatch) => {
   dispatch({
     type: TASKS_REDUCER_CONSTANTS.TASKS_DONE_TASK,
@@ -27,11 +33,5 @@ export const editTask = (editableTask, newTask) => (dispatch) => {
   dispatch({
     type: TASKS_REDUCER_CONSTANTS.TASKS_EDIT_TASK,
     payload: { editableTask, newTask },
-  });
-};
-
-export const deleteAllTasks = () => (dispatch) => {
-  dispatch({
-    type: TASKS_REDUCER_CONSTANTS.TASKS_DELETE_ALL_TASK,
   });
 };

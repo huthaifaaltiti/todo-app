@@ -1,7 +1,7 @@
 // react
 import React, { useState, useEffect } from "react";
 
-// styles
+// styles, icon
 import styles from "./styles.module.css";
 import { BiArrowToTop } from "react-icons/bi";
 
@@ -9,11 +9,7 @@ export default function GoToTopBtn() {
   const [isVisible, setIsVisible] = useState(false);
 
   const handleScroll = () => {
-    if (window.scrollY > 200) {
-      setIsVisible(true);
-    } else {
-      setIsVisible(false);
-    }
+    window.scrollY > 150 ? setIsVisible(true) : setIsVisible(false);
   };
 
   const scrollToTop = () => {

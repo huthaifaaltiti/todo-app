@@ -31,7 +31,7 @@ const TasksReducer = (state = initialState, action) => {
 
       return restTasks;
 
-    case TASKS_REDUCER_CONSTANTS.TASKS_DELETE_ALL_TASK:
+    case TASKS_REDUCER_CONSTANTS.TASKS_DELETE_ALL_TASKS:
       return [];
 
     case TASKS_REDUCER_CONSTANTS.TASKS_DONE_TASK:

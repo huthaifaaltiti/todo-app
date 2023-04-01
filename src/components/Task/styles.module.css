@@ -138,14 +138,14 @@
   background-color: var(--color-four-d1);
 }
 
-/* Arabic chars. */
+/* when typing Arabic chars. */
 .rtl {
   direction: rtl;
   font-family: "Readex Pro", sans-serif;
   
 }
 
-/* English chars. */
+/* when typing English chars. */
 .ltr {
   direction: ltr;
   font-family: "Alata", sans-serif;

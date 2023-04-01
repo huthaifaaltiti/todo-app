@@ -32,8 +32,6 @@
 
   background-color: var(--color-grey-d1);
 
-  /* box-shadow: var(--shadow-li1); */
-
   cursor: pointer;
 
   transition: all 0.15s linear;

@@ -64,6 +64,8 @@ export default function Task({ task, index }) {
     setEditableTask((prev) => {
       return {
         ...prev,
+
+        // Bug: when click edit btn twice without adding value to newTask, the taskDetails becomes ""!!
         taskDetails: newTask || editableTask?.taskDetails,
       };
     });
@@ -107,7 +109,7 @@ export default function Task({ task, index }) {
         </span>
       </div>
 
-      {/* Task published time  */}
+      {/* Done task published time  */}
       <div className={styles.taskTimeCont}>
         {secondesDiff > 59 ? (
           <p className={styles.createdDateMessage}>

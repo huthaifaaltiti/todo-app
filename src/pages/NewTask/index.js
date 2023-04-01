@@ -2,6 +2,7 @@
 import React, { useState } from "react";
 // react-redux
 import { useDispatch, useSelector } from "react-redux";
+
 // react-helmet
 import { Helmet } from "react-helmet";
 
@@ -68,13 +69,13 @@ export default function NewTask() {
 
       <div className={styles.tasksCont}>
         {tasks?.length > 0 ? (
-          <div
-            className={styles.deleteAllCont}
-            onClick={() => {
-              dispatch(deleteAllTasks());
-            }}
-          >
-            <span>
+          /* Delete all tasks */
+          <div className={styles.deleteAllCont}>
+            <span
+              onClick={() => {
+                dispatch(deleteAllTasks());
+              }}
+            >
               <MdOutlineDeleteSweep className={styles.deleteAllIcon} />
               Delete All Tasks
             </span>

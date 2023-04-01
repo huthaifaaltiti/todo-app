@@ -69,8 +69,6 @@
 
 /* Sector: General app use */
 
-/* App general animation */
-
 /* slide-in animation */
 .slideIn {
   animation: slideIn 0.5s ease-in-out;

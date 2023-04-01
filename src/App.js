@@ -30,7 +30,7 @@ function App() {
         </Routes>
       </Suspense>
 
-      {/* Go to top button */}
+      {/* GoToTop button */}
       <span className="goToTopBtn">
         <GoToTopBtn  />
       </span>

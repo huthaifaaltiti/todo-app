@@ -1,4 +1,4 @@
-// component
+// component, react-spinner
 import { SyncLoader } from "react-spinners";
 
 // styles

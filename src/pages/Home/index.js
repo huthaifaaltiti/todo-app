@@ -40,8 +40,9 @@ export default function Home() {
         </h2>
       </header>
 
+      {/* Main 3 dashboards */}
       <div className={styles.dashboardsCont}>
-        {/* total tasks */}
+        {/* Dashboard 1: total tasks */}
         <div
           className={`${styles.dashboardMainBox} ${styles.dashboardTotalTasksBox}`}
         >
@@ -66,7 +67,7 @@ export default function Home() {
           </div>
         </div>
 
-        {/* efficiency of finished tasks */}
+        {/* Dashboard 2: efficiency of finished tasks */}
         <div
           className={`${styles.dashboardMainBox} ${styles.dashboardTasksEffBox}`}
         >
@@ -90,7 +91,7 @@ export default function Home() {
           </div>
         </div>
 
-        {/*finished tasks */}
+        {/* Dashboard 3: finished tasks */}
         <div
           className={`${styles.dashboardMainBox} ${styles.dashboardFinishedTasksBox}`}
         >

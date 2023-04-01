@@ -13,7 +13,6 @@ const TasksReducer = (state = initialState, action) => {
       const { inputData, isArabic } = action.payload;
 
       return [
-        ...state,
         {
           taskDetails: inputData,
           done: false,
@@ -22,6 +21,7 @@ const TasksReducer = (state = initialState, action) => {
           taskDate: timestamp,
           isArabic: isArabic,
         },
+        ...state,
       ];
 
     case TASKS_REDUCER_CONSTANTS.TASKS_DELETE_TASK:
